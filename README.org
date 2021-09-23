@@ -9,16 +9,15 @@
 python -m venv .venv
 #+end_src
 
-- NOTE: If this donsent work, you may try to write python3 insted of python.
+- NOTE: If this doesn't work, you may try to write python3 instead of python.
 
 ** Source the virtual environment
-- In the project folder run:
-  + For the beloved Linux:
+- For the beloved Linux:
 #+begin_src shell
 source .venv/bin/activate
 #+end_src
 
-  + For the hated Windows (you use Windows? What a shame!):
+- For the hated Windows (you use Windows? What a shame!):
 #+begin_src shell
 .venv\Scripts\activate.bat
 #+end_src
