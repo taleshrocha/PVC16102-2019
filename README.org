@@ -31,3 +31,15 @@ python -m pip install -r requirements.txt
 - Any trouble with all that? Check https://docs.python.org/3/tutorial/venv.html#tut-venv for more information.
 
 * How to run the project
+- Go to the folder olx and run:
+#+begin_src shell
+scrapy crawl olx -o olx-data.csv
+#+end_src
+
+- Let the process run into the end. Takes about 3-4 minutes. In the end, you will have a csv file like that:
+#+begin_src csv
+name,price,link
+Casa exclusiva e luxuosa em Jacumã por Carpediem - US01F,Sold Out,https://rn.olx.com.br/rio-grande-do-norte/temporada/casa-exclusiva-e-luxuosa-em-jacuma-por-carpediem-us01f-918665546
+Grande Espaço Interno - 3 Quartos - 4º Andar - Sombra -  Próximo Promater - Antônio Dutra ,380.000,https://rn.olx.com.br/rio-grande-do-norte/temporada/casa-exclusiva-e-luxuosa-em-jacuma-por-carpediem-us01f-918665546
+...
+#+end_src
