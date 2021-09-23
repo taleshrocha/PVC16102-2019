@@ -1,0 +1,34 @@
+#+TITLE: Olx Scraper
+#+DESCRIPTION: Just a simple spider to scrape the Olx imóveis (https://rn.olx.com.br/imoveis) site.
+
+* Installation and configuration
+** Create a virtual environment (.venv)
+- If you haven't installed python in you machine: https://www.python.org/downloads/
+- Run the following command in your shell:
+#+begin_src shell
+python -m venv .venv
+#+end_src
+
+- NOTE: If this donsent work, you may try to write python3 insted of python.
+
+** Source the virtual environment
+- In the project folder run:
+  + For the beloved Linux:
+#+begin_src shell
+source .venv/bin/activate
+#+end_src
+
+  + For the hated Windows (you use Windows? What a shame!):
+#+begin_src shell
+.venv\Scripts\activate.bat
+#+end_src
+
+** Install the requirements
+- That's easy! Just run:
+#+begin_src shell
+python -m pip install -r requirements.txt
+#+end_src
+
+- Any trouble with all that? Check https://docs.python.org/3/tutorial/venv.html#tut-venv for more information.
+
+* How to run the project
