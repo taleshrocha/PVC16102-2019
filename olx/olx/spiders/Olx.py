@@ -1,6 +1,6 @@
 import scrapy
 
-class olx(scrapy.Spider):
+class Olx(scrapy.Spider):
     name = 'olx'
     start_urls = ['https://rn.olx.com.br/imoveis/venda?sf=1']
 
@@ -16,7 +16,8 @@ class olx(scrapy.Spider):
             return response.css(query).get(default='EMPTY').strip()
 
         yield{
-            #'title' : extract_with_css('h2.sc-1iuc9a2-1.dTvKuJ.sc-ifAKCX.eKQLlb::text'),
-            'price' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').replace('R$ ', ''),
-            #'link' : extract_with_css('a.fnmrjs-0.fyjObc::attr(href)'),
+            'title' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text'),
+            #'price' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').replace('R$ ', ''),
+            #'link' : response, #TODO: Use regex to clean this string
+            #'area' : extract_with_css('dd.sc-1f2ug0x-1.ljYeKO.sc-ifAKCX.kaNiaQ::text').replace('m²', ''), #TODO: Only get this by search for word
         }
