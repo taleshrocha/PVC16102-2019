@@ -2,7 +2,8 @@ import scrapy
 
 class olx(scrapy.Spider):
     name = 'olx'
-    start_urls = ['https://rn.olx.com.br/imoveis']
+    #start_urls = ['https://rn.olx.com.br/imoveis']
+    start_urls = ['https://rn.olx.com.br/imoveis/venda']
     #handle_httpstatus_list = [403]
 
     def parse(self, response):
