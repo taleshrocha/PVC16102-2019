@@ -12,12 +12,28 @@ class Olx(scrapy.Spider):
         yield from response.follow_all(nextPageLinks, self.parse)
 
     def parse_house(self, response):
+        area = 'EMPTY'
+        municipio = 'EMPTY'
+        categoria = 'EMPTY'
+
         def extract_with_css(query):
             return response.css(query).get(default='EMPTY').strip()
 
+        houseDetails = response.css('div.duvuxf-0.h3us20-0.jyICCp')
+        for detail in houseDetails:
+            if detail.css('dt::text').get() == 'Área útil' or detail.css('dt::text').get() == 'Área construída':
+                area = detail.css('dd::text').get().replace('m²', '') #TODO: There is other varieble for the area to. To much emptyes
+            elif detail.css('dt::text').get() == 'Município':
+                municipio = detail.css('dd::text').get()
+            elif detail.css('dt::text').get() == 'Categoria':
+                categoria = detail.css('a::text').get()[:-1]
+
         yield{
-            'title' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text'),
-            #'price' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').replace('R$ ', ''),
-            #'link' : response, #TODO: Use regex to clean this string
-            #'area' : extract_with_css('dd.sc-1f2ug0x-1.ljYeKO.sc-ifAKCX.kaNiaQ::text').replace('m²', ''), #TODO: Only get this by search for word
+            #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text'),
+            'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').replace('R$ ', ''),
+            'area' : area,
+            'municipio' : municipio,
+            'categoria' : categoria,
+            'link' : response, #TODO: Use regex to clean this string
+            #'value' : value,
         }
