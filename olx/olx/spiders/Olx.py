@@ -1,25 +1,43 @@
 import scrapy
+import re
 
 class Olx(scrapy.Spider):
+    beginInter = 0
+    endInter = 100000
+
     name = 'olx'
-    start_urls = ['https://rn.olx.com.br/imoveis/venda?sf=1']
+    start_urls = ['https://rn.olx.com.br/imoveis/venda?pe=' + str(endInter) + '&ps=' + str(beginInter)]
 
     def parse(self, response):
-        houseLinks = response.css('li.sc-1fcmfeb-2.juiJqh a')
-        yield from response.follow_all(houseLinks, self.parse_house)
 
-        nextPageLinks = response.css('div.sc-hmzhuo.ccWJBO.sc-jTzLTM.iwtnNi a')
-        yield from response.follow_all(nextPageLinks, self.parse)
+        string = response.css('span.sc-1mi5vq6-0.eDXljX.sc-ifAKCX.fhJlIo::text').get()
+        match = re.search(pattern = "[0-9]*\.[0-9]*", string = string)
+
+        if float(match.group()) < 4800:
+            # Gets the links for each house in the page
+            houseLinks = response.css('li.sc-1fcmfeb-2.juiJqh a')
+            yield from response.follow_all(houseLinks, self.parse_house)
+
+            # Gets the next interval link. Wich is the next page
+            beginInter = beginInter + 50000
+            endInter = endInter + 50000
+
+            nextInterval = 'https://rn.olx.com.br/imoveis/venda?pe=' + str(endInter) + '&ps=' + str(beginInter)
+            yield from response.follow_all(nextInterval, self.parse)
+        else:
+            yield 'Nothing to scrape'
+            exit()
 
     def parse_house(self, response):
-        area = 'EMPTY'
-        municipio = 'EMPTY'
-        categoria = 'EMPTY'
 
         def extract_with_css(query):
             return response.css(query).get(default='EMPTY').strip()
 
+        area = 'EMPTY'
+        municipio = 'EMPTY'
+        categoria = 'EMPTY'
         houseDetails = response.css('div.duvuxf-0.h3us20-0.jyICCp')
+
         for detail in houseDetails:
             if detail.css('dt::text').get() == 'Área útil' or detail.css('dt::text').get() == 'Área construída':
                 area = detail.css('dd::text').get().replace('m²', '') #TODO: There is other varieble for the area to. To much emptyes
@@ -34,6 +52,6 @@ class Olx(scrapy.Spider):
             'area' : area,
             'municipio' : municipio,
             'categoria' : categoria,
-            'link' : response, #TODO: Use regex to clean this string
+            'link' : response,
             #'value' : value,
         }
