@@ -1,35 +1,51 @@
+import logging
 import scrapy
 import re
 
+logger = logging.getLogger('LOGGER')
 
 class Olx(scrapy.Spider):
-    beginInter = 0
-    endInter = 100000
+    def __init__(self):
+            self.ps = 0
+            self.pe = 100000
+
+    def next_link(pe):
+            self.ps = self.pe
+            self.pe = self.pe + 50000
+
     name = 'olx'
-    start_urls = ['https://rn.olx.com.br/imoveis/venda?pe=' + str(endInter) + '&ps=' + str(beginInter)]
+    start_urls = ['https://rn.olx.com.br/imoveis/venda?pe=1000&ps=10']
 
     def parse(self, response):
+        logger.info('====================START PARSER====================')
 
-        beginInter = 0
-        endInter = 100000
         string = response.css('span.sc-1mi5vq6-0.eDXljX.sc-ifAKCX.fhJlIo::text').get()
-        match = re.search(pattern = "[0-9]*\.[0-9]*", string = string)
+        logger.info('==================== %s ====================', string)
+        #match = re.search(pattern = "[0-9]*\.[0-9]*", string = string)
+        match = re.search(pattern = "[0-9][0-9]", string = string)
 
-        if float(match.group()) < 4.800:
+        if float(match.group()) < 4800:
             # Gets the links for each house in the page
             houseLinks = response.css('li.sc-1fcmfeb-2.juiJqh a')
             yield from response.follow_all(houseLinks, self.parse_house)
 
-            # Gets the next interval link. Wich is the next page
-            beginInter = beginInter + 50000
-            endInter = endInter + 50000
-
-            nextInterval = 'https://rn.olx.com.br/imoveis/venda?pe=' + str(endInter) + '&ps=' + str(beginInter)
-            yield from response.follow_all(nextInterval, self.parse)
+            page = response.css('div.sc-hmzhuo.ccWJBO.sc-jTzLTM.iwtnNi span::text').get()
+            if page == 'Página anterior':
+            # Go to the next interval
+                nextLink = 'https://rn.olx.com.br/imoveis/venda?pe=' + str(self.pe) + '&ps=' + str(self.ps)
+                logger.info('====================Next link: %s====================', nextLink)
+                yield response.follow_all(nextLink, self.parse)
+            else:
+                # Get to a smaller interval TODO
+                logger.info('====================NEXT-PAGE====================')
+                nextPageLinks = response.css('div.sc-hmzhuo.ccWJBO.sc-jTzLTM.iwtnNi a')
+                yield from response.follow_all(nextPageLinks, self.parse)
         else:
-         raise CloseSpider('Nothing to scrape')
+            logger.info('====================DIED====================')
+            raise CloseSpider('Nothing to scrape')
 
     def parse_house(self, response):
+        logger.info('====================PARCE-HOUSE====================')
 
         def extract_with_css(query):
             return response.css(query).get(default='EMPTY').strip()

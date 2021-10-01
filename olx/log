@@ -245,3 +245,1475 @@ UnboundLocalError: local variable 'beginInter' referenced before assignment
  'spider_exceptions/UnboundLocalError': 1,
  'start_time': datetime.datetime(2021, 10, 1, 19, 47, 40, 286476)}
 2021-10-01 16:47:44 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-01 20:36:42 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: olx)
+2021-10-01 20:36:42 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.7.0, Python 3.9.7 (default, Aug 31 2021, 13:28:12) - [GCC 11.1.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1l  24 Aug 2021), cryptography 3.4.8, Platform Linux-5.14.6-arch1-1-x86_64-with-glibc2.33
+2021-10-01 20:36:42 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-10-01 20:36:50 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: olx)
+2021-10-01 20:36:50 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.7.0, Python 3.9.7 (default, Aug 31 2021, 13:28:12) - [GCC 11.1.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1l  24 Aug 2021), cryptography 3.4.8, Platform Linux-5.14.6-arch1-1-x86_64-with-glibc2.33
+2021-10-01 20:36:50 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-10-01 20:36:50 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'olx',
+ 'EDITOR': 'nvim',
+ 'LOG_FILE': 'log',
+ 'NEWSPIDER_MODULE': 'olx.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['olx.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}
+2021-10-01 20:36:50 [scrapy.extensions.telnet] INFO: Telnet Password: 714f6b50d4cd51a0
+2021-10-01 20:36:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-01 20:36:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-01 20:36:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-01 20:36:50 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2021-10-01 20:36:50 [scrapy.core.engine] INFO: Spider opened
+2021-10-01 20:36:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-01 20:36:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-10-01 20:36:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/robots.txt> (referer: None)
+2021-10-01 20:36:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0> (referer: None)
+2021-10-01 20:36:51 [scrapy.core.scraper] ERROR: Spider error processing <GET https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0> (referer: None)
+Traceback (most recent call last):
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/utils/python.py", line 353, in __next__
+    return next(self.data)
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/utils/python.py", line 353, in __next__
+    return next(self.data)
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/olx/olx/spiders/Olx.py", line 17, in parse
+    logger.info('START PARSER')
+NameError: name 'logger' is not defined
+2021-10-01 20:36:51 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-01 20:36:51 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2846,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 87023,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 1.627108,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 1, 23, 36, 51, 789809),
+ 'httpcompression/response_bytes': 801880,
+ 'httpcompression/response_count': 2,
+ 'log_count/DEBUG': 2,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 57110528,
+ 'memusage/startup': 57110528,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/NameError': 1,
+ 'start_time': datetime.datetime(2021, 10, 1, 23, 36, 50, 162701)}
+2021-10-01 20:36:51 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-01 20:37:52 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: olx)
+2021-10-01 20:37:52 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.7.0, Python 3.9.7 (default, Aug 31 2021, 13:28:12) - [GCC 11.1.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1l  24 Aug 2021), cryptography 3.4.8, Platform Linux-5.14.6-arch1-1-x86_64-with-glibc2.33
+2021-10-01 20:37:52 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-10-01 20:37:52 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'olx',
+ 'EDITOR': 'nvim',
+ 'LOG_FILE': 'log',
+ 'NEWSPIDER_MODULE': 'olx.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['olx.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; '
+               'Trident/5.0)'}
+2021-10-01 20:37:52 [scrapy.extensions.telnet] INFO: Telnet Password: 5b24e2fd1fa29902
+2021-10-01 20:37:52 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-01 20:37:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-01 20:37:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-01 20:37:52 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2021-10-01 20:37:52 [scrapy.core.engine] INFO: Spider opened
+2021-10-01 20:37:52 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-01 20:37:52 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-10-01 20:37:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/robots.txt> (referer: None)
+2021-10-01 20:37:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0> (referer: None)
+2021-10-01 20:37:54 [scrapy.core.scraper] ERROR: Spider error processing <GET https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0> (referer: None)
+Traceback (most recent call last):
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/utils/python.py", line 353, in __next__
+    return next(self.data)
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/utils/python.py", line 353, in __next__
+    return next(self.data)
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/.venv/lib/python3.9/site-packages/scrapy/core/spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "/home/tales/Documents/PVC16102-2019/olx-scraper/olx/olx/spiders/Olx.py", line 17, in parse
+    logger.info('START PARSER')
+NameError: name 'logger' is not defined
+2021-10-01 20:37:54 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-01 20:37:54 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2802,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 87301,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 1.888293,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 1, 23, 37, 54, 208401),
+ 'httpcompression/response_bytes': 802939,
+ 'httpcompression/response_count': 2,
+ 'log_count/DEBUG': 2,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 57253888,
+ 'memusage/startup': 57253888,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/NameError': 1,
+ 'start_time': datetime.datetime(2021, 10, 1, 23, 37, 52, 320108)}
+2021-10-01 20:37:54 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-01 20:39:17 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: olx)
+2021-10-01 20:39:17 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.7.0, Python 3.9.7 (default, Aug 31 2021, 13:28:12) - [GCC 11.1.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1l  24 Aug 2021), cryptography 3.4.8, Platform Linux-5.14.6-arch1-1-x86_64-with-glibc2.33
+2021-10-01 20:39:17 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-10-01 20:39:17 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'olx',
+ 'EDITOR': 'nvim',
+ 'LOG_FILE': 'log',
+ 'NEWSPIDER_MODULE': 'olx.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['olx.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36'}
+2021-10-01 20:39:17 [scrapy.extensions.telnet] INFO: Telnet Password: 0a5e154e1bd2d29a
+2021-10-01 20:39:17 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-01 20:39:17 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-01 20:39:17 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-01 20:39:17 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2021-10-01 20:39:17 [scrapy.core.engine] INFO: Spider opened
+2021-10-01 20:39:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-01 20:39:17 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-10-01 20:39:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/robots.txt> (referer: None)
+2021-10-01 20:39:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0> (referer: None)
+2021-10-01 20:39:18 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-duplex-938890788> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-bosque-das-colinas-sao-jose-do-mipibu-cod-823603-909309723> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-excelente-oportunidade-939040631> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-duplex-938890788>
+{'preco': '26.000'}
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-bosque-das-colinas-sao-jose-do-mipibu-cod-823603-909309723>
+{'preco': '85.000'}
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-excelente-oportunidade-939040631>
+{'preco': '90.000'}
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-938847574> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-extremoz-938865827> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-vila-maria-sao-jose-de-mipibu-cod-821244-719257178> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-em-macaiba-938857593> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/sua-casa-propria-sem-consulta-ao-spc-e-serasa-e-aqui-na-via-costeira-934778739> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-938847574>
+{'preco': '27.000'}
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-extremoz-938865827>
+{'preco': '60.000'}
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-vila-maria-sao-jose-de-mipibu-cod-821244-719257178>
+{'preco': '70.000'}
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-em-macaiba-938857593>
+{'preco': '95.000'}
+2021-10-01 20:39:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/sua-casa-propria-sem-consulta-ao-spc-e-serasa-e-aqui-na-via-costeira-934778739>
+{'preco': '50.000'}
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-938934031> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/preco-de-ocasiao-in-mare-bali-56m2-mobiliado-e-projetado-860600892> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/cobertura-duplex-no-in-mare-bali-resort-residencial-in-mare-bali-599820830> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-938934031>
+{'preco': '25.000'}
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/preco-de-ocasiao-in-mare-bali-56m2-mobiliado-e-projetado-860600892>
+{'preco': '0'}
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/cobertura-duplex-no-in-mare-bali-resort-residencial-in-mare-bali-599820830>
+{'preco': '0'}
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-lindo-apartamento-no-spazio-di-vicenza-em-nova-betania-km-imoveis-938942244> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-sendo-1-suite-com-a-documentacao-gratis-604813534> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-bairro-de-pajucara-938954087> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-bairro-de-alecrim-938945839> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/resort-residencial-in-mare-mobiliado-e-equipado-com-56m-oportunidade-646161996> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-lindo-apartamento-no-spazio-di-vicenza-em-nova-betania-km-imoveis-938942244>
+{'preco': '0'}
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-sendo-1-suite-com-a-documentacao-gratis-604813534>
+{'preco': '90.000'}
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-bairro-de-pajucara-938954087>
+{'preco': '55.000'}
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-bairro-de-alecrim-938945839>
+{'preco': '60.000'}
+2021-10-01 20:39:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/resort-residencial-in-mare-mobiliado-e-equipado-com-56m-oportunidade-646161996>
+{'preco': '0'}
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/venda-938763447> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-para-venda-no-jardim-do-thermas-no-santo-antonio-mossoro-rn-938769684> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/venda-938763447>
+{'preco': '250'}
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-para-venda-no-jardim-do-thermas-no-santo-antonio-mossoro-rn-938769684>
+{'preco': '90.000'}
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-3-dormitorios-sendo-1-suite-nova-parnamirim-parnamirim-rn-938783256> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/capta-leiloes-vende-rio-grande-do-norte-rn-938785941> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendido-mais-opcoes-instagran-imoveis-niksoncaio-cobertura-duplex-in-mare-bali-800849255> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-938800094> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-938806765> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-3-dormitorios-sendo-1-suite-nova-parnamirim-parnamirim-rn-938783256>
+{'preco': '0'}
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/capta-leiloes-vende-rio-grande-do-norte-rn-938785941>
+{'preco': '47.107'}
+2021-10-01 20:39:21 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendido-mais-opcoes-instagran-imoveis-niksoncaio-cobertura-duplex-in-mare-bali-800849255>
+{'preco': '0'}
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-938800094>
+{'preco': '40.000'}
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-938806765>
+{'preco': '33.000'}
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-unica-casa-bem-localizada-finacia-938812803> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-muriu-centro-800m-da-praia-2-quartos-mobiliada-aceita-carro-938815129> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-unica-casa-bem-localizada-finacia-938812803>
+{'preco': '100.000'}
+2021-10-01 20:39:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-muriu-centro-800m-da-praia-2-quartos-mobiliada-aceita-carro-938815129>
+{'preco': '50.000'}
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/in-mare-bali-com-56m-todo-mobiliado-e-com-projetado-oportunidade-647065519> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/firenze-lagoa-nova-166m-andar-alto-744406290> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-mobiliado-no-resort-residencial-in-mare-bali-723044837> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-em-oferta-desconto-de-20mil-e-documentacao-gratis-possibilidade-d-zero-924093218> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/in-mare-bali-com-56m-todo-mobiliado-e-com-projetado-oportunidade-647065519>
+{'preco': '0'}
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-atlantico-oportunidade-759738805> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-no-planalto-2-4-parque-das-sapucaias-i-44m-repasse-886067324> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/firenze-lagoa-nova-166m-andar-alto-744406290>
+{'preco': '0'}
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-in-mare-bali-oportunidade-488419052> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-mobiliado-no-resort-residencial-in-mare-bali-723044837>
+{'preco': '0'}
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-em-oferta-desconto-de-20mil-e-documentacao-gratis-possibilidade-d-zero-924093218>
+{'preco': '99.990'}
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-atlantico-oportunidade-759738805>
+{'preco': '0'}
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-no-planalto-2-4-parque-das-sapucaias-i-44m-repasse-886067324>
+{'preco': '60.000'}
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-in-mare-bali-oportunidade-488419052>
+{'preco': '0'}
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-45000-r-933435322> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-parnamirim-938958874> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-45000-r-933435322>
+{'preco': '45.000'}
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-parnamirim-938958874>
+{'preco': '55.000'}
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-av-eucaliptos-938955747> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-em-lago-nova-938956140> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:22 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-excelente-oportunidade-939040631> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-938959207> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-av-eucaliptos-938955747>
+{'preco': '70.000'}
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/compre-sua-casa-parcelado-938959920> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/incrivel-apartamento-com-vista-pro-mar-com-154m2-in-mare-bali-669296603> (referer: https://rn.olx.com.br/imoveis/venda?pe=100000&ps=0)
+2021-10-01 20:39:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-em-lago-nova-938956140>
+{'preco': '100.000'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-938959207>
+{'preco': '77.000'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/compre-sua-casa-parcelado-938959920>
+{'preco': '40.000'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/incrivel-apartamento-com-vista-pro-mar-com-154m2-in-mare-bali-669296603>
+{'preco': '0'}
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-no-jardim-progresso-938327119> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-ideal-vila-nova-2-4-938326729> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-no-jardim-progresso-938327119>
+{'preco': '100.000'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-ideal-vila-nova-2-4-938326729>
+{'preco': '55.000'}
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-3-4-ideal-vila-nova-938327386> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-3-4-ideal-vila-nova-938327386>
+{'preco': '56.000'}
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-santa-cruz-rn-938338198> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parnamirim-54m2-938353498> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-no-pontegi-938354668> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-praia-do-forte-938374735> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-planalto-938360619> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-santa-cruz-rn-938338198>
+{'preco': '55.000'}
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parnamirim-54m2-938353498>
+{'preco': '92.500'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-no-pontegi-938354668>
+{'preco': '10.887'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-praia-do-forte-938374735>
+{'preco': '70.000'}
+2021-10-01 20:39:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-planalto-938360619>
+{'preco': '87.000'}
+2021-10-01 20:39:23 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-localizada-no-vida-nova-parnamirim-849322739> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-alugo-casa-em-ceara-mirim-938085159> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-localizada-no-vida-nova-parnamirim-849322739>
+{'preco': '90.000'}
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-alugo-casa-em-ceara-mirim-938085159>
+{'preco': '65.000'}
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-938435534> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-duplex-938446456> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-938435534>
+{'preco': '30.000'}
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-ponta-negra-938419699> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-duplex-938446456>
+{'preco': '30.000'}
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-890036700> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-ponta-negra-938419699>
+{'preco': '0'}
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-parnamirim-repasse-938424564> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apto-com-2-quartos-e-area-de-lazer-909717986> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-fontes-monte-alegre-938451828> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-890036700>
+{'preco': '55.000'}
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-parnamirim-repasse-938424564>
+{'preco': '29.000'}
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apto-com-2-quartos-e-area-de-lazer-909717986>
+{'preco': '89.000'}
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-fontes-monte-alegre-938451828>
+{'preco': '14.000'}
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-nova-no-plaza-gardem-2-4-sendo-1-suite-938458747> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-nova-no-plaza-gardem-2-4-sendo-1-suite-938458747>
+{'preco': '480'}
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ap-em-parnamirim-938459374> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-recem-construidas-938491046> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ap-em-parnamirim-938459374>
+{'preco': '35.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-alecrim-938498534> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-recem-construidas-938491046>
+{'preco': '100.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-938501690> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-alecrim-938498534>
+{'preco': '69.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-rocas-938501875> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-na-bairro-alianca-938503974> (referer: https://rn.olx.com.br/imoveis/venda?o=2&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-2-casas-na-redinha-velha-as-2-casas-por-r-55-000-00-937874903> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-938501690>
+{'preco': '75.000'}
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-rocas-938501875>
+{'preco': '47.000'}
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-na-bairro-alianca-938503974>
+{'preco': '23.000'}
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-2-casas-na-redinha-velha-as-2-casas-por-r-55-000-00-937874903>
+{'preco': '55.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-em-boa-localizacao-proximo-a-creche-posto-de-saude-no-valor-de-65-000-937893638> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-em-boa-localizacao-proximo-a-creche-posto-de-saude-no-valor-de-65-000-937893638>
+{'preco': '65.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/melhor-oferta-sua-casa-na-zona-norte-937906694> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-em-mossoro-ainda-financiada-937914894> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/melhor-oferta-sua-casa-na-zona-norte-937906694>
+{'preco': '78.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-ou-alugar-937938116> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-lindo-apartamento-no-residencial-alameda-planalto-km-imoveis-937947573> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-em-mossoro-ainda-financiada-937914894>
+{'preco': '45.000'}
+2021-10-01 20:39:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-no-condominio-otavio-ferreira-km-imoveis-937955110> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-ou-alugar-937938116>
+{'preco': '40.000'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-jardim-satelite-com-2-quartos-51-m-cidade-satelite-937943895> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-lindo-apartamento-no-residencial-alameda-planalto-km-imoveis-937947573>
+{'preco': '100.000'}
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-no-condominio-otavio-ferreira-km-imoveis-937955110>
+{'preco': '90.000'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-essa-casa-937969388> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-jardim-satelite-com-2-quartos-51-m-cidade-satelite-937943895>
+{'preco': '90.000'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oferta-vende-se-apartamento-por-tras-da-havida-de-igapo-no-brisa-do-potengi-1-937989419> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-essa-casa-937969388>
+{'preco': '90.000'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-3-dormitorios-em-sao-jose-macaiba-cod-823131-881227672> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/wd-casa-alto-padrao-com-2-quartos-e-suite-portal-do-sol-proximo-a-praia-de-genipabu-938003916> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oferta-vende-se-apartamento-por-tras-da-havida-de-igapo-no-brisa-do-potengi-1-937989419>
+{'preco': '70.000'}
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-3-dormitorios-em-sao-jose-macaiba-cod-823131-881227672>
+{'preco': '100.000'}
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/wd-casa-alto-padrao-com-2-quartos-e-suite-portal-do-sol-proximo-a-praia-de-genipabu-938003916>
+{'preco': '0'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/lindo-apto-novo-5-andar-3-quartos-suite-2-vagas-livres-ed-manoel-de-oliveira-938007028> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-muito-boa-bairro-planalto-otima-localizacao-938004354> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-grande-e-bem-localizada-938020363> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/lindo-apto-novo-5-andar-3-quartos-suite-2-vagas-livres-ed-manoel-de-oliveira-938007028>
+{'preco': '2.700'}
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-muito-boa-bairro-planalto-otima-localizacao-938004354>
+{'preco': '85.000'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-alecrim-938027079> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-grande-e-bem-localizada-938020363>
+{'preco': '580'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-parnamirim-938027168> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-alecrim-938027079>
+{'preco': '75.000'}
+2021-10-01 20:39:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-parnamirim-938027168>
+{'preco': '70.000'}
+2021-10-01 20:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nossa-senhora-da-apresentacao-936363049> (referer: https://rn.olx.com.br/imoveis/venda?o=3&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-jangadas-937433621> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nossa-senhora-da-apresentacao-936363049>
+{'preco': '95.000'}
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-jangadas-937433621>
+{'preco': '45.000'}
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-no-bairro-odete-rosado-mossoro-937436327> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-no-bairro-odete-rosado-mossoro-937436327>
+{'preco': '17.000'}
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-cajueiro-937459091> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-cajueiro-937459091>
+{'preco': '30.000'}
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937447665> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-na-segunda-etapa-do-bairro-vingt-rosado-km-imoveis-937448958> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937447665>
+{'preco': '40.000'}
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-na-segunda-etapa-do-bairro-vingt-rosado-km-imoveis-937448958>
+{'preco': '48.000'}
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-2-dormitorio-no-planalto-natal-rn-937475979> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-esta-casa-937508507> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-2-4-rua-rio-norte-886302681> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-2-dormitorio-no-planalto-natal-rn-937475979>
+{'preco': '99.990'}
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-937513510> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-esta-casa-937508507>
+{'preco': '23.000'}
+2021-10-01 20:39:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-ate-zero-de-entrada-em-frente-a-guararapes-documentacao-gratis-815911232> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-2-4-rua-rio-norte-886302681>
+{'preco': '69.788'}
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-937513510>
+{'preco': '80.000'}
+2021-10-01 20:39:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-ate-zero-de-entrada-em-frente-a-guararapes-documentacao-gratis-815911232>
+{'preco': '95.000'}
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/venda-937517812> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-57-m-por-r-95-000-00-santa-tereza-parnamirim-920208879> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-cond-waldemar-rolin-em-nova-esperanca-parnamirim-rn-855092000> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-praia-de-pitangui-perto-da-praia-com-2-quartos-937515080> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/venda-937517812>
+{'preco': '55.000'}
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casas-em-vila-no-centro-de-extremoz-927343497> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-57-m-por-r-95-000-00-santa-tereza-parnamirim-920208879>
+{'preco': '95.000'}
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-cond-waldemar-rolin-em-nova-esperanca-parnamirim-rn-855092000>
+{'preco': '60.000'}
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-praia-de-pitangui-perto-da-praia-com-2-quartos-937515080>
+{'preco': '70.000'}
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casas-em-vila-no-centro-de-extremoz-927343497>
+{'preco': '35.000'}
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-1-quarto-zn-pajucara-937519545> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-no-residencial-vivendas-de-parnamirim-937536081> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-1-quarto-zn-pajucara-937519545>
+{'preco': '38.000'}
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-em-monte-alegre-com-documentacao-inclusa-572580790> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-no-residencial-vivendas-de-parnamirim-937536081>
+{'preco': '70.000'}
+2021-10-01 20:39:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-em-monte-alegre-com-documentacao-inclusa-572580790>
+{'preco': '91.100'}
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-pra-vender-ou-trocar-937164860> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/bairro-jardins-novo-horizonte-61-72m-2-quartos-786655575> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-58-m-por-r-88-100-00-cidade-bela-sao-jose-de-mipibu-928766856> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-cidade-nova-937592503> (referer: https://rn.olx.com.br/imoveis/venda?o=4&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-pra-vender-ou-trocar-937164860>
+{'preco': '80.000'}
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/bairro-jardins-novo-horizonte-61-72m-2-quartos-786655575>
+{'preco': '95.000'}
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-58-m-por-r-88-100-00-cidade-bela-sao-jose-de-mipibu-928766856>
+{'preco': '88.100'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-58-m-por-r-95-000-parque-das-nacoes-parnamiri-937162852> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-cidade-nova-937592503>
+{'preco': '55.000'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937169559> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-58-m-por-r-95-000-parque-das-nacoes-parnamiri-937162852>
+{'preco': '95.000'}
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937169559>
+{'preco': '25.000'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/whatsapp--937166202> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/whatsapp--937166202>
+{'preco': '60.000'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-venda-vale-do-sol-parnamirim-937174665> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-no-planalto-937181279> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-casa-937199714> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-937176152> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-venda-vale-do-sol-parnamirim-937174665>
+{'preco': '54.999'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-937201617> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-no-planalto-937181279>
+{'preco': '15.000'}
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-casa-937199714>
+{'preco': '25.000'}
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-937176152>
+{'preco': '70.000'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-no-ideal-vila-nova-parnamirim-rn-2-quartos-nova-parnamirim-918034844> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-937201617>
+{'preco': '85.000'}
+2021-10-01 20:39:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-no-ideal-vila-nova-parnamirim-rn-2-quartos-nova-parnamirim-918034844>
+{'preco': '100.000'}
+2021-10-01 20:39:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apv-1007-repasse-apartamento-2-4-mirantes-da-lagoa-s-g-a-rn-885789332> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apv-1007-repasse-apartamento-2-4-mirantes-da-lagoa-s-g-a-rn-885789332>
+{'preco': '30.000'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-de-alto-padrao-937234559> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/doubleflat-no-in-mare-bali-com-82m-mobiliado-3-andar-oportunidade-774028721> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-de-alto-padrao-937234559>
+{'preco': '60.000'}
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/doubleflat-no-in-mare-bali-com-82m-mobiliado-3-andar-oportunidade-774028721>
+{'preco': '0'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/in-mare-bali-doubleflat-645482144> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/cobertura-duplex-in-mare-bali-165m-toda-mobiliada-e-projetada-top-806550389> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/in-mare-bali-doubleflat-645482144>
+{'preco': '0'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/aluguel-ap-2q-937236909> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/cobertura-duplex-in-mare-bali-165m-toda-mobiliada-e-projetada-top-806550389>
+{'preco': '0'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937258797> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/aluguel-ap-2q-937236909>
+{'preco': '1.000'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937258797>
+{'preco': '50.000'}
+2021-10-01 20:39:30 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/imovel-excelente-estado-nova-parnamirim-937263565> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937294019> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/imovel-excelente-estado-nova-parnamirim-937263565>
+{'preco': '70.000'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parcelada-no-boleto-937280664> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-937294019>
+{'preco': '22.000'}
+2021-10-01 20:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-recem-construida-em-condominio-624316134> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parcelada-no-boleto-937280664>
+{'preco': '12.000'}
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-recem-construida-em-condominio-624316134>
+{'preco': '90.000'}
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/excelente-casa-em-macau-rn-937298060> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-planalto-parcelada-no-boleto-937287181> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/uma-otima-para-ter-sua-casa-na-zona-norte-937298290> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/excelente-casa-em-macau-rn-937298060>
+{'preco': '95.000'}
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-planalto-parcelada-no-boleto-937287181>
+{'preco': '17.000'}
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-duas-casas-937303760> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-planalto-parcelada-no-boleto-937301262> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/uma-otima-para-ter-sua-casa-na-zona-norte-937298290>
+{'preco': '78.000'}
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-duas-casas-937303760>
+{'preco': '50.000'}
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-parcelada-bairro-planalto-937307213> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-planalto-parcelada-no-boleto-937301262>
+{'preco': '17.000'}
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-otima-casa-em-mossoro-937302877> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-parcelada-bairro-planalto-937307213>
+{'preco': '17.000'}
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-937305452> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-otima-casa-em-mossoro-937302877>
+{'preco': '60.000'}
+2021-10-01 20:39:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-937305452>
+{'preco': '100.000'}
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-green-life-3-4-com-suite-e-facilidade-de-aprovacao-937337232> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-de-praia-pirangi-no-litoral-sul-ou-imoveis-937307492> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-green-life-3-4-com-suite-e-facilidade-de-aprovacao-937337232>
+{'preco': '19.900'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/nova-esperanca-casa-2-quartos-lajeada-escritura-publica-r-90-mil-937321048> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-937140043> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-de-praia-pirangi-no-litoral-sul-ou-imoveis-937307492>
+{'preco': '0'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-02-quartos-no-planalto-905172940> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/nova-esperanca-casa-2-quartos-lajeada-escritura-publica-r-90-mil-937321048>
+{'preco': '90.000'}
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-937140043>
+{'preco': '40.000'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-com-2-dormitorios-em-jardim-lola-sao-goncalo-do-amarante-cod-823108-878893479> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-02-quartos-no-planalto-905172940>
+{'preco': '90.000'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-parcelada-937309081> (referer: https://rn.olx.com.br/imoveis/venda?o=5&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-com-2-dormitorios-em-jardim-lola-sao-goncalo-do-amarante-cod-823108-878893479>
+{'preco': '73.000'}
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-parcelada-937309081>
+{'preco': '17.000'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-faco-repasso-936650752> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-lajeada-vendo-troca-com-volta-ao-lado-do-queiroz-atacadao-936735242> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-faco-repasso-936650752>
+{'preco': '30.000'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-com-zero-de-entrada-909842015> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-lajeada-vendo-troca-com-volta-ao-lado-do-queiroz-atacadao-936735242>
+{'preco': '55.000'}
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-com-zero-de-entrada-909842015>
+{'preco': '95.000'}
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-parnamirim-bairro-santa-julia-909037360> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/solar-das-estacoes-2-4-1-banheiro-r-90-000-00-planalto-861175399> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-parnamirim-bairro-santa-julia-909037360>
+{'preco': '100.000'}
+2021-10-01 20:39:32 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/terreno-grande-lagoa-do-poco-936756127> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apart-jardim-do-thermas-mossoro-rn-936755039> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/solar-das-estacoes-2-4-1-banheiro-r-90-000-00-planalto-861175399>
+{'preco': '90.000'}
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/energia-solar-cert-solar-934177496> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/terreno-grande-lagoa-do-poco-936756127>
+{'preco': '35.000'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apart-jardim-do-thermas-mossoro-rn-936755039>
+{'preco': '87.000'}
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parcelada-no-boleto-936764754> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/energia-solar-cert-solar-934177496>
+{'preco': '0'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parcelada-no-boleto-936764754>
+{'preco': '12.000'}
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nova-parnamirim-936763302> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nova-parnamirim-936763302>
+{'preco': '100.000'}
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parcelada-no-boleto-936764758> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vender-casa-936780610> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-alto-de-sao-manoel-936784311> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-parcelada-no-boleto-936764758>
+{'preco': '12.000'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vender-casa-936780610>
+{'preco': '90.000'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-alto-de-sao-manoel-936784311>
+{'preco': '47.000'}
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-48-m-por-r-85-000-00-sao-goncalo-do-amarante-rn-823782095> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-natal-bairro-candelaria-936789568> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-agio-de-casa-10-minutos-da-praia-936805673> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-ceara-mirim-936806016> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-48-m-por-r-85-000-00-sao-goncalo-do-amarante-rn-823782095>
+{'preco': '80.000'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-natal-bairro-candelaria-936789568>
+{'preco': '23.332'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-agio-de-casa-10-minutos-da-praia-936805673>
+{'preco': '15.000'}
+2021-10-01 20:39:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-ceara-mirim-936806016>
+{'preco': '17.000'}
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-medindo-6-por-15-936813505> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-medindo-6-por-15-936813505>
+{'preco': '77.000'}
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-em-ceara-mirim-b-planalto-936822304> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/smart-city-cidade-inteligente-819634998> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-solar-das-estacoes-936873216> (referer: https://rn.olx.com.br/imoveis/venda?o=6&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-em-ceara-mirim-b-planalto-936822304>
+{'preco': '20.000'}
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-nova-esperanca-macaiba-cod-514613-548769654> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-70-m-venda-por-r-95-000-00-ou-aluguel-por-r-500-00-mes-901155528> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/smart-city-cidade-inteligente-819634998>
+{'preco': '100.000'}
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-solar-das-estacoes-936873216>
+{'preco': '99.990'}
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-nova-esperanca-macaiba-cod-514613-548769654>
+{'preco': '95.000'}
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-70-m-venda-por-r-95-000-00-ou-aluguel-por-r-500-00-mes-901155528>
+{'preco': '95.000'}
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-venda-troca-936451090> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-venda-troca-936451090>
+{'preco': '65.000'}
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-65-m-por-r-95-000-00-mazapas-nisia-floresta-rn-928766692> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-no-loteamento-esperanca-936406385> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-65-m-por-r-95-000-00-mazapas-nisia-floresta-rn-928766692>
+{'preco': '95.000'}
+2021-10-01 20:39:34 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apartamento-936404195> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-nova-no-loteamento-cidade-bela-936406403> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-no-loteamento-esperanca-936406385>
+{'preco': '85.000'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apartamento-936404195>
+{'preco': '14.000'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-nova-no-loteamento-cidade-bela-936406403>
+{'preco': '79.900'}
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-zn-936410769> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/bairro-planejado-rota-norte-60m-de-area-construida-2-quartos-665251408> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-zn-936410769>
+{'preco': '70.000'}
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/natal-padrao-pitimbu-931386940> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/ab-casa-3-4-sendo-1-suite-bairro-liberdade-parnamirim-936418962> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/bairro-planejado-rota-norte-60m-de-area-construida-2-quartos-665251408>
+{'preco': '85.000'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/natal-padrao-pitimbu-931386940>
+{'preco': '95.000'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/ab-casa-3-4-sendo-1-suite-bairro-liberdade-parnamirim-936418962>
+{'preco': '0'}
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-936422759> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-936433249> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-novo-amarante-r-55-000-936432573> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-936422759>
+{'preco': '0'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-936433249>
+{'preco': '80.000'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-novo-amarante-r-55-000-936432573>
+{'preco': '55.000'}
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-santo-antonio-936442991> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-936460884> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-936445674> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-santo-antonio-936442991>
+{'preco': '55.000'}
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-936460884>
+{'preco': '35.000'}
+2021-10-01 20:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-uma-casa-936454600> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-936445674>
+{'preco': '55.000'}
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-82m-todo-mobiliado-e-projetado-praia-de-cotovelo-748887724> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-pra-vender-ou-trocar-em-carro-936466247> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-uma-casa-936454600>
+{'preco': '55.000'}
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-82m-todo-mobiliado-e-projetado-praia-de-cotovelo-748887724>
+{'preco': '0'}
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-pra-vender-ou-trocar-em-carro-936466247>
+{'preco': '95.000'}
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-2-4-rua-rio-norte-885075783> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-ou-vendo-apartamento-3-4-planalto-936379003> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-2-4-rua-rio-norte-885075783>
+{'preco': '70.040'}
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-ou-vendo-apartamento-3-4-planalto-936379003>
+{'preco': '80.000'}
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-936492822> (referer: https://rn.olx.com.br/imoveis/venda?o=7&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-936492822>
+{'preco': '76.000'}
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-935805321> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-vila-935838032> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-935805321>
+{'preco': '100.000'}
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-quase-terminada-por-25-mil-reais-935846528> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-vila-935838032>
+{'preco': '25.000'}
+2021-10-01 20:39:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-quase-terminada-por-25-mil-reais-935846528>
+{'preco': '25.000'}
+2021-10-01 20:39:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/jardim-satelite-935842760> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/jardim-satelite-935842760>
+{'preco': '95.000'}
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apto-em-natal-cidade-da-esperanca-935852699> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-excelente-935855987> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apto-em-natal-cidade-da-esperanca-935852699>
+{'preco': '99.000'}
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-excelente-935855987>
+{'preco': '45.000'}
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-green-life-sem-burocracia-e-facilidade-de-aprovacao-807618442> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/monte-verde-em-neopolis-935855999> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-green-life-sem-burocracia-e-facilidade-de-aprovacao-807618442>
+{'preco': '25.000'}
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/monte-verde-em-neopolis-935855999>
+{'preco': '90.000'}
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-nossa-senhora-da-apresentacao-935859674> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-nossa-senhora-da-apresentacao-935859674>
+{'preco': '50.000'}
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-a-300mt-da-upa-3-quartos-nova-esperanca-935912619> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-casa-em-parnamirim-935930661> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-a-300mt-da-upa-3-quartos-nova-esperanca-935912619>
+{'preco': '70.000'}
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-flamboyants-com-2-4-58-m-cef-844736335> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-casa-em-parnamirim-935930661>
+{'preco': '25.000'}
+2021-10-01 20:39:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-flamboyants-com-2-4-58-m-cef-844736335>
+{'preco': '100.000'}
+2021-10-01 20:39:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-935994899> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-uma-casa-935903095> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-em-parnamirim-935988296> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-condominio-espanha-2-quartos-56m-neopolis-935964209> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-935994899>
+{'preco': '35.000'}
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-uma-casa-935903095>
+{'preco': '0'}
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-em-parnamirim-935988296>
+{'preco': '40.000'}
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-condominio-espanha-2-quartos-56m-neopolis-935964209>
+{'preco': '95.000'}
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/primeiro-andar-936025285> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/primeiro-andar-936025285>
+{'preco': '90.000'}
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/alugo-apartamento-03-quartos-em-lagoa-nova-883397784> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-central-em-extremoz-936049381> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/alugo-apartamento-03-quartos-em-lagoa-nova-883397784>
+{'preco': '2.800'}
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-cajupiranga-proxima-a-br-101-905172347> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-central-em-extremoz-936049381>
+{'preco': '30.000'}
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/residencial-praia-de-cotovelo-766678122> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-cajupiranga-proxima-a-br-101-905172347>
+{'preco': '90.000'}
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/residencial-praia-de-cotovelo-766678122>
+{'preco': '1.600'}
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-intercities-apto-repasse-936088188> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-50-000-00-936075266> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apto-no-cond-mirantes-da-lagoa-em-extremoz-mobiliado-r-46-mil-reais-882522925> (referer: https://rn.olx.com.br/imoveis/venda?o=8&pe=100000&ps=0)
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-intercities-apto-repasse-936088188>
+{'preco': '35.000'}
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-50-000-00-936075266>
+{'preco': '50.000'}
+2021-10-01 20:39:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apto-no-cond-mirantes-da-lagoa-em-extremoz-mobiliado-r-46-mil-reais-882522925>
+{'preco': '46.000'}
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-de-praia-em-zumbi-935369492> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-935333389> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-apartamento-no-residencial-morabem-935338037> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-macaiba-loteamento-cidade-campestre-1-quarto-935325111> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-de-praia-em-zumbi-935369492>
+{'preco': '90.000'}
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-935333389>
+{'preco': '400'}
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-apartamento-no-residencial-morabem-935338037>
+{'preco': '58.000'}
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-macaiba-loteamento-cidade-campestre-1-quarto-935325111>
+{'preco': '65.000'}
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-67-m-por-r-90-000-00-planalto-natal-rn-928766666> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-amplo-ap-2-4-cidade-alta-935370000> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-intercities-2-dormitorios-proximo-a-br-de-acesso-ao-aeroporto-e-praias-909684707> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-67-m-por-r-90-000-00-planalto-natal-rn-928766666>
+{'preco': '90.000'}
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-amplo-ap-2-4-cidade-alta-935370000>
+{'preco': '95.000'}
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-intercities-2-dormitorios-proximo-a-br-de-acesso-ao-aeroporto-e-praias-909684707>
+{'preco': '50.000'}
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vende-935409680> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-vende-se-otimo-apartamento-no-condominio-otavio-ferreira-km-imoveis-935426602> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/bairro-planejado-rota-norte-casa-com-60-m2-de-area-construida-2-quartos-867454837> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-condominio-a-venda-em-extremoz-rn-871549084> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vende-935409680>
+{'preco': '440'}
+2021-10-01 20:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nova-natal-935441288> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-vende-se-otimo-apartamento-no-condominio-otavio-ferreira-km-imoveis-935426602>
+{'preco': '65.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/bairro-planejado-rota-norte-casa-com-60-m2-de-area-construida-2-quartos-867454837>
+{'preco': '85.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-condominio-a-venda-em-extremoz-rn-871549084>
+{'preco': '97.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nova-natal-935441288>
+{'preco': '88.000'}
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-bosque-das-colinas-3-na-principal-935434168> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-935454674> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-bosque-das-colinas-3-na-principal-935434168>
+{'preco': '29.000'}
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-novas-ninguem-morou-935485962> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-69-m-por-r-100-000-touros-rn-935511480> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-moinho-dos-ventos-935455670> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-935454674>
+{'preco': '60.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-novas-ninguem-morou-935485962>
+{'preco': '60.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-69-m-por-r-100-000-touros-rn-935511480>
+{'preco': '100.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-moinho-dos-ventos-935455670>
+{'preco': '32.000'}
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-44-m-por-r-70-000-centro-extremoz-rn-935511478> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-populares-na-zn-935510289> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-44-m-por-r-70-000-centro-extremoz-rn-935511478>
+{'preco': '70.000'}
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casas-populares-na-zn-935510289>
+{'preco': '50.000'}
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-na-zona-norte-935535279> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-na-zona-norte-935535279>
+{'preco': '80.000'}
+2021-10-01 20:39:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-pajucara-935537938> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-ponta-negra-935548266> (referer: https://rn.olx.com.br/imoveis/venda?o=9&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-pajucara-935537938>
+{'preco': '18.000'}
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apto-reserva-lagoa-nova-2-4-c-suite-valor-do-repasse-49mil-934810556> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-ponta-negra-935548266>
+{'preco': '80.000'}
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-935263967> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apto-reserva-lagoa-nova-2-4-c-suite-valor-do-repasse-49mil-934810556>
+{'preco': '49.246'}
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-935263967>
+{'preco': '47.000'}
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/machado-de-assis-com-taxas-909505230> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-parnamirim-934841504> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/orpotunidade-unica-casa-a-venda-934817903> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-1-dormitorios-em-nossa-senhora-da-apresentacao-natal-cod-823119-879846817> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/machado-de-assis-com-taxas-909505230>
+{'preco': '950'}
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-parnamirim-934841504>
+{'preco': '95.000'}
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/orpotunidade-unica-casa-a-venda-934817903>
+{'preco': '40.000'}
+2021-10-01 20:39:41 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/estou-vendendo-esta-casa-por-35-mil-reais-934887978> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-1-dormitorios-em-nossa-senhora-da-apresentacao-natal-cod-823119-879846817>
+{'preco': '89.999'}
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/estou-vendendo-esta-casa-por-35-mil-reais-934887978>
+{'preco': '35.000'}
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-linda-casa-de-praia-em-zumbi-934864901> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-linda-casa-de-praia-em-zumbi-934864901>
+{'preco': '70.000'}
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/chacara-santo-antonio-macaiba-934892388> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-no-jardins-de-nova-parnamirim-934897941> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/excelente-casa-83000-934893979> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/chacara-santo-antonio-macaiba-934892388>
+{'preco': '90.000'}
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/a-venda-ou-troca-no-planalto-934893083> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/belissima-casa-parcelada-no-boleto-sem-juros-934922858> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-no-jardins-de-nova-parnamirim-934897941>
+{'preco': '50.000'}
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/excelente-casa-83000-934893979>
+{'preco': '83.000'}
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-4-dormitorios-a-venda-126-m-por-r-90-000-00-rincao-mossoro-rn-678418925> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/a-venda-ou-troca-no-planalto-934893083>
+{'preco': '23.000'}
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/belissima-casa-parcelada-no-boleto-sem-juros-934922858>
+{'preco': '60.000'}
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-4-dormitorios-a-venda-126-m-por-r-90-000-00-rincao-mossoro-rn-678418925>
+{'preco': '90.000'}
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-na-zona-norte-764086121> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/grande-feirao-de-imoveis-934954156> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-na-zona-norte-764086121>
+{'preco': '75.000'}
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-bs-lagoa-nova-bellevue-4-4qts-843400695> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/grande-feirao-de-imoveis-934954156>
+{'preco': '50.000'}
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-bs-lagoa-nova-bellevue-4-4qts-843400695>
+{'preco': '400'}
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/otima-oportunidade-de-casa-na-zona-norte-de-natal-934973408> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-935021624> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-934972468> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/otima-oportunidade-de-casa-na-zona-norte-de-natal-934973408>
+{'preco': '50.000'}
+2021-10-01 20:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/parnamirim-casa-em-vila-r-30-000-00-estudamos-proposta-passagem-de-areia-891278857> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-935021624>
+{'preco': '50.000'}
+2021-10-01 20:39:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-vender-934972468>
+{'preco': '25.000'}
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/parnamirim-casa-em-vila-r-30-000-00-estudamos-proposta-passagem-de-areia-891278857>
+{'preco': '30.000'}
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-condominio-fechado-ecoville-2-parnamirim-934987375> (referer: https://rn.olx.com.br/imoveis/venda?o=10&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-condominio-fechado-ecoville-2-parnamirim-934987375>
+{'preco': '70.000'}
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-no-condominio-guaira-sombra-934395513> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apartamento-condominio-mirantes-da-lagoa-932724756> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apto-934329549> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-no-condominio-guaira-sombra-934395513>
+{'preco': '100.000'}
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apartamento-condominio-mirantes-da-lagoa-932724756>
+{'preco': '38.500'}
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apto-934329549>
+{'preco': '27.000'}
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/novo-sttilo-home-clube-com-132m-cobertura-duplex-712559909> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-no-condominio-934345031> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/novo-sttilo-home-clube-com-132m-cobertura-duplex-712559909>
+{'preco': '0'}
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-no-bairro-integracao-km-imoveis-934344520> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-no-condominio-934345031>
+{'preco': '48.000'}
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-no-bairro-integracao-km-imoveis-934344520>
+{'preco': '100.000'}
+2021-10-01 20:39:43 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-na-segunda-etapa-do-vingt-rosado-km-imoveis-934350067> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-2-quartos-934394796> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-na-segunda-etapa-do-vingt-rosado-km-imoveis-934350067>
+{'preco': '100.000'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-felipe-camrao-934375943> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-nova-parnamirim-934398739> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-bem-estruturada-e-localizada-com-um-otimo-terreno-934382322> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-2-quartos-934394796>
+{'preco': '80.000'}
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-felipe-camrao-934375943>
+{'preco': '60.000'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-duplex-composta-por-4-quartos-sendo-3-suites-934383776> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-nova-parnamirim-934398739>
+{'preco': '70.000'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-alecrim-934366838> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-bem-estruturada-e-localizada-com-um-otimo-terreno-934382322>
+{'preco': '49.999'}
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-duplex-composta-por-4-quartos-sendo-3-suites-934383776>
+{'preco': '100.000'}
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-no-alecrim-934366838>
+{'preco': '50.000'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-passa-e-fica-rn-934411292> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-no-condominio-waldemar-rolim-934412669> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-passa-e-fica-rn-934411292>
+{'preco': '60.000'}
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-no-condominio-waldemar-rolim-934412669>
+{'preco': '45.000'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-54-m-por-r-99-000-00-pium-nisia-floresta-rn-928766702> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-934494729> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-sao-goncalo-do-amarante-934499852> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-54-m-por-r-99-000-00-pium-nisia-floresta-rn-928766702>
+{'preco': '99.000'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-areia-preta-934503505> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-934494729>
+{'preco': '90.000'}
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-sao-goncalo-do-amarante-934499852>
+{'preco': '11.500'}
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-934503547> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-934511422> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-areia-preta-934503505>
+{'preco': '75.000'}
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-934503547>
+{'preco': '82.000'}
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-casa-934511422>
+{'preco': '20.000'}
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-solta-rota-norte-623795498> (referer: https://rn.olx.com.br/imoveis/venda?o=11&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-59-m-por-r-100-000-santa-tereza-parnamirim-rn-765229508> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-solta-rota-norte-623795498>
+{'preco': '93.000'}
+2021-10-01 20:39:45 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-59-m-por-r-100-000-santa-tereza-parnamirim-rn-765229508>
+{'preco': '100.000'}
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-repasse-sao-goncalo-mirantes-933986257> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/extremoz-carao-10-x-20-2-quartos-747993139> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-repasse-sao-goncalo-mirantes-933986257>
+{'preco': '26.000'}
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-934005119> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/extremoz-carao-10-x-20-2-quartos-747993139>
+{'preco': '99.000'}
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-paia-de-buzios-934006091> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-pra-terminar-933997692> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-934005119>
+{'preco': '45.000'}
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-na-paia-de-buzios-934006091>
+{'preco': '68.000'}
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-em-barcelona-rn-934026234> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-uma-casa-pra-terminar-933997692>
+{'preco': '70.000'}
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-por-carro-de-menor-valor-934049617> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-em-parnamirim-908154381> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-em-barcelona-rn-934026234>
+{'preco': '35.000'}
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-por-carro-de-menor-valor-934049617>
+{'preco': '50.000'}
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-em-parnamirim-908154381>
+{'preco': '100.000'}
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-parque-das-paineiras-de-pois-do-ct-do-america-934099173> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-no-condominio-morabem-baixei-pra-vender-logo-934098064> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-parque-das-paineiras-de-pois-do-ct-do-america-934099173>
+{'preco': '28.000'}
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-no-condominio-morabem-baixei-pra-vender-logo-934098064>
+{'preco': '50.000'}
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-934128994> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-em-otimo-condominio-934119316> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-sao-goncalo-do-amarante-934100557> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-934128994>
+{'preco': '40.000'}
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/modulo-934123998> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-em-otimo-condominio-934119316>
+{'preco': '32.000'}
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-sao-goncalo-do-amarante-934100557>
+{'preco': '15.000'}
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-ou-troca-casa-934124087> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/modulo-934123998>
+{'preco': '177'}
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-exu-queimado-vendo-934131312> (referer: https://rn.olx.com.br/imoveis/venda?o=12&pe=100000&ps=0)
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-ou-troca-casa-934124087>
+{'preco': '70.000'}
+2021-10-01 20:39:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-exu-queimado-vendo-934131312>
+{'preco': '70.000'}
+2021-10-01 20:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-a-beira-mar-843139381> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-novo-no-vita-residencial-clube-55m-com-2-quartos-539938983> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/residencial-parque-das-marias-repasse-valor-50-000-933454392> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-a-beira-mar-843139381>
+{'preco': '0'}
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/residencial-in-mare-bali-o-paraiso-a-beira-mar-oportunidade-unica-696733137> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-altantico-vista-espetacular-de-ponta-negra-oportunidade-535220739> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-novo-no-vita-residencial-clube-55m-com-2-quartos-539938983>
+{'preco': '0'}
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/residencial-parque-das-marias-repasse-valor-50-000-933454392>
+{'preco': '50.000'}
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/residencial-in-mare-bali-o-paraiso-a-beira-mar-oportunidade-unica-696733137>
+{'preco': '0'}
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-resort-residencial-in-mare-bali-o-paraiso-a-beira-mar-568857752> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-altantico-vista-espetacular-de-ponta-negra-oportunidade-535220739>
+{'preco': '0'}
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-resort-residencial-in-mare-bali-o-paraiso-a-beira-mar-568857752>
+{'preco': '0'}
+2021-10-01 20:39:47 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-pra-vender-logo-in-mare-bali-com-56m-3-andar-com-vista-pro-mar-836676875> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-em-parnamirim-bosque-brasil-aceito-troca-em-carro-terreno-ou-casa-933468094> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-pra-vender-logo-in-mare-bali-com-56m-3-andar-com-vista-pro-mar-836676875>
+{'preco': '0'}
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-em-parnamirim-bosque-brasil-aceito-troca-em-carro-terreno-ou-casa-933468094>
+{'preco': '50.000'}
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-vita-residencial-clube-com-moveis-andar-alto-e-ventilado-486747541> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-rua-mira-torres-bairro-nordeste-933486298> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/oportunidade-vita-residencial-clube-com-moveis-andar-alto-e-ventilado-486747541>
+{'preco': '0'}
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-62-m-a-venda-por-r-85-000-nova-esperanca-parnamirim-rn-933501512> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-2-4-repasse-no-santa-delmira-loteamento-parque-verde-mossoro-rn-838979478> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-rua-mira-torres-bairro-nordeste-933486298>
+{'preco': '50.000'}
+2021-10-01 20:39:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-macaiba-933520295> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-quartos-62-m-a-venda-por-r-85-000-nova-esperanca-parnamirim-rn-933501512>
+{'preco': '85.000'}
+2021-10-01 20:39:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-2-4-repasse-no-santa-delmira-loteamento-parque-verde-mossoro-rn-838979478>
+{'preco': '30.000'}
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apto-02-quartos-novo-res-celina-solar-repasse-ou-financiado-mossoro-rn-833871276> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-no-residencial-santana-926933934> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-macaiba-933520295>
+{'preco': '70.000'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apto-02-quartos-novo-res-celina-solar-repasse-ou-financiado-mossoro-rn-833871276>
+{'preco': '60.000'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-no-residencial-santana-926933934>
+{'preco': '100.000'}
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-vila-com-kitnets-br-br-933531550> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-vila-com-kitnets-br-br-933531550>
+{'preco': '100.000'}
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-cass-933558187> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-vila-com-3-casa-duas-pronta-e-uma-pra-aprontar-933560688> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-de-cass-933558187>
+{'preco': '23.000'}
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-933586748> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-nova-2-quartos-65m2-condominio-fechado-ate-100-financiada-r-110-mil-922107053> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-vila-com-3-casa-duas-pronta-e-uma-pra-aprontar-933560688>
+{'preco': '80.000'}
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-933562578> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-bairro-da-redinha-933598498> (referer: https://rn.olx.com.br/imoveis/venda?o=13&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/kitnet-locacao-de-1-e-2-quartos-nova-parnamirim-628475063> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-decorado-todo-mobiliado-no-in-mare-bali-82-m2-543897446> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-933586748>
+{'preco': '50.000'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-nova-2-quartos-65m2-condominio-fechado-ate-100-financiada-r-110-mil-922107053>
+{'preco': '99.000'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-933562578>
+{'preco': '0'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-bairro-da-redinha-933598498>
+{'preco': '80.000'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/kitnet-locacao-de-1-e-2-quartos-nova-parnamirim-628475063>
+{'preco': '550'}
+2021-10-01 20:39:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-decorado-todo-mobiliado-no-in-mare-bali-82-m2-543897446>
+{'preco': '0'}
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/capta-leiloes-vende-extremoz-905682673> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/locacao-nova-parnamirim-932922615> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/capta-leiloes-vende-extremoz-905682673>
+{'preco': '49.878'}
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/locacao-nova-parnamirim-932922615>
+{'preco': '2.200'}
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-1-dormitorio-a-venda-50-m-por-r-45-000-00-passagem-de-areia-parnamirim-rn-928766560> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-932905167> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-alugo-em-nova-paramirim-932893159> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-80-m-por-r-89-990-00-bela-parnamirim-parnamirim-rn-928766610> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-venda-encanto-verde-932946886> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-1-dormitorio-a-venda-50-m-por-r-45-000-00-passagem-de-areia-parnamirim-rn-928766560>
+{'preco': '45.000'}
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-932905167>
+{'preco': '60.000'}
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-alugo-em-nova-paramirim-932893159>
+{'preco': '1.100'}
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-80-m-por-r-89-990-00-bela-parnamirim-parnamirim-rn-928766610>
+{'preco': '89.990'}
+2021-10-01 20:39:49 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-venda-encanto-verde-932946886>
+{'preco': '80.000'}
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-macaiba-25-mil-933033672> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/urgente-casa-2-quartos-160m2-perto-do-rio-doce-905668281> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-ou-aluguel-de-casa-em-condominio-fechado-932970131> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-933107568> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-muito-bem-localizada-no-conjunto-soledade-ii-na-zona-norte-de-natal-933058799> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:49 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-macaiba-25-mil-933033672>
+{'preco': '25.000'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/urgente-casa-2-quartos-160m2-perto-do-rio-doce-905668281>
+{'preco': '50.000'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-ou-aluguel-de-casa-em-condominio-fechado-932970131>
+{'preco': '11.500'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-933107568>
+{'preco': '65.000'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-muito-bem-localizada-no-conjunto-soledade-ii-na-zona-norte-de-natal-933058799>
+{'preco': '100.000'}
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-pra-vender-no-bairro-nordeste-r-18-000-00-933047455> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-933024927> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-pra-vender-no-bairro-nordeste-r-18-000-00-933047455>
+{'preco': '18.000'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-933024927>
+{'preco': '65.000'}
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-troca-casa-em-parnamirim-933116405> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-troca-casa-em-parnamirim-933116405>
+{'preco': '30.000'}
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-mossoro-933138363> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apartamento-no-planalto-933122168> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-duplex-com-2-dormitorios-a-venda-67-m-por-r-99-900-bela-vista-macaiba-rn-928766657> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-apartamento-933160151> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/venda-de-uma-casa-quitada-em-extremoz-933162676> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-mossoro-933138363>
+{'preco': '32.000'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-apartamento-no-planalto-933122168>
+{'preco': '0'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-duplex-com-2-dormitorios-a-venda-67-m-por-r-99-900-bela-vista-macaiba-rn-928766657>
+{'preco': '99.900'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasse-apartamento-933160151>
+{'preco': '30.000'}
+2021-10-01 20:39:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/venda-de-uma-casa-quitada-em-extremoz-933162676>
+{'preco': '75.000'}
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/saia-do-aluguel-parcelada-933189008> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-e-troco-kit-nete-933164453> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/saia-do-aluguel-parcelada-933189008>
+{'preco': '100.000'}
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-e-troco-kit-nete-933164453>
+{'preco': '50.000'}
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/natal-apartamento-padrao-ponta-negra-918032268> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/troco-uma-moto-no-terreno-933268734> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/natal-apartamento-padrao-ponta-negra-918032268>
+{'preco': '100.000'}
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/troco-uma-moto-no-terreno-933268734>
+{'preco': '6.000'}
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-fundacao-933257043> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-mediterranee-em-capim-macio-3-quartos-933294801> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-fundacao-933257043>
+{'preco': '20.000'}
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-atlantico-todo-mobiliado-e-projetado-andar-alto-763347645> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/promocao-de-verao-prorrogada-resort-residencial-in-mare-bali-601370296> (referer: https://rn.olx.com.br/imoveis/venda?o=14&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/condominio-mediterranee-em-capim-macio-3-quartos-933294801>
+{'preco': '0'}
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-atlantico-todo-mobiliado-e-projetado-andar-alto-763347645>
+{'preco': '0'}
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/imoveis-de-leilao-caixa-932269321> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/promocao-de-verao-prorrogada-resort-residencial-in-mare-bali-601370296>
+{'preco': '0'}
+2021-10-01 20:39:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/imoveis-de-leilao-caixa-932269321>
+{'preco': '40.000'}
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-932296673> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-areia-preta-932296856> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-pajucara-932296673>
+{'preco': '85.000'}
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-areia-preta-932296856>
+{'preco': '53.000'}
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-932298467> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-com-2-dormitorios-em-planalto-natal-cod-813957-548769464> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-932358599> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-quintas-932298467>
+{'preco': '100.000'}
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/alugar-vender-apartamento-cobertura-duplex-mobiliado-3-suites-180m-905621013> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-com-2-dormitorios-em-planalto-natal-cod-813957-548769464>
+{'preco': '99.000'}
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-932358599>
+{'preco': '75.000'}
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-no-sitio-vila-do-velame-jucurutu-rn-932383956> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/alugar-vender-apartamento-cobertura-duplex-mobiliado-3-suites-180m-905621013>
+{'preco': '8.020'}
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-no-sitio-vila-do-velame-jucurutu-rn-932383956>
+{'preco': '58.000'}
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-sao-jose-do-mipibu-rn-932384916> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-condominio-fechado-932384694> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-em-sao-jose-do-mipibu-rn-932384916>
+{'preco': '75.000'}
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-condominio-fechado-932384694>
+{'preco': '90.000'}
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-carro-ou-moto-932414775> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-45-m-por-r-64-000-00-parque-das-arvores-parna-928766576> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-lagoa-nova-natal-932403263> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:52 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-carro-ou-moto-932414775>
+{'preco': '20.000'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-planalto-932403464> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-2-dormitorios-a-venda-45-m-por-r-64-000-00-parque-das-arvores-parna-928766576>
+{'preco': '64.000'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-932407022> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-lagoa-nova-natal-932403263>
+{'preco': '0'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-70-m-por-r-45-000-00-santa-tereza-macaiba-rn-928766655> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-planalto-932403464>
+{'preco': '100.000'}
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-932407022>
+{'preco': '100.000'}
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-70-m-por-r-45-000-00-santa-tereza-macaiba-rn-928766655>
+{'preco': '45.000'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-no-residencial-solar-das-estacoes-926934012> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-proxima-ao-hospital-deoclecio-928766568> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-1-dormitorio-47-m-venda-por-r-95-160-ou-aluguel-por-r-550-mes-caju-922720147> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-no-residencial-solar-das-estacoes-926934012>
+{'preco': '100.000'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apto-2-4-res-jardim-do-thermas-por-tras-do-posto-lider-mossoro-rn-622979133> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-proxima-ao-hospital-deoclecio-928766568>
+{'preco': '96.000'}
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-com-1-dormitorio-47-m-venda-por-r-95-160-ou-aluguel-por-r-550-mes-caju-922720147>
+{'preco': '95.160'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-uma-casa-em-serrinha-sao-goncalo-932433761> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apto-2-4-res-jardim-do-thermas-por-tras-do-posto-lider-mossoro-rn-622979133>
+{'preco': '75.000'}
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-uma-casa-em-serrinha-sao-goncalo-932433761>
+{'preco': '50.000'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-nossa-senhora-da-apresentacao-natal-cod-824030-932454460> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/aluguel-kitnet-932484327> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-a-venda-com-2-dormitorios-em-nossa-senhora-da-apresentacao-natal-cod-824030-932454460>
+{'preco': '100.000'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-932549996> (referer: https://rn.olx.com.br/imoveis/venda?o=15&pe=100000&ps=0)
+2021-10-01 20:39:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/aluguel-kitnet-932484327>
+{'preco': '650'}
+2021-10-01 20:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/bela-casa-em-casa-em-panatis-931844449> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-casa-932549996>
+{'preco': '40.000'}
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/bela-casa-em-casa-em-panatis-931844449>
+{'preco': '100.000'}
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-931806023> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-pq-dos-coqueiros-2-4-financiada-ou-avista-931845632> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-931806023>
+{'preco': '80.000'}
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apto-em-cidade-satelite-3-andar-escriturado-r-95-mil-880410588> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-no-pq-dos-coqueiros-2-4-financiada-ou-avista-931845632>
+{'preco': '98.000'}
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apto-em-cidade-satelite-3-andar-escriturado-r-95-mil-880410588>
+{'preco': '95.000'}
+2021-10-01 20:39:54 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-em-natal-907918391> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-repasse-apartamento-931906650> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-casa-na-vila-de-ponta-negra-931915384> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-rota-norte-massaranduba-931925824> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-apartamento-em-natal-907918391>
+{'preco': '85.000'}
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-repasse-apartamento-931906650>
+{'preco': '50.000'}
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-casa-na-vila-de-ponta-negra-931915384>
+{'preco': '30.000'}
+2021-10-01 20:39:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/repasso-casa-no-rota-norte-massaranduba-931925824>
+{'preco': '17.000'}
+2021-10-01 20:39:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-venda-monte-alegre-3-4-suite-880262647> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-venda-no-centro-de-joao-camara-apenas-venda-931930339> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/credito-imobiliario-931971965> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-venda-monte-alegre-3-4-suite-880262647>
+{'preco': '70.000'}
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-931955353> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-para-venda-no-centro-de-joao-camara-apenas-venda-931930339>
+{'preco': '18.000'}
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/credito-imobiliario-931971965>
+{'preco': '40.000'}
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-apartamento-931955353>
+{'preco': '0'}
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-parnamirim-931975422> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/compre-sua-casa-parcelada-931977933> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-3-dormitorios-a-venda-220-m-por-r-85-000-00-tabatinga-macaiba-rn-907941880> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-em-parnamirim-931975422>
+{'preco': '76.000'}
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-condominio-fechado-62-m-quadrados-do-lado-da-sombra-em-parnamirim-825507765> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/compre-sua-casa-parcelada-931977933>
+{'preco': '50.000'}
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-3-dormitorios-a-venda-220-m-por-r-85-000-00-tabatinga-macaiba-rn-907941880>
+{'preco': '85.000'}
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-condominio-fechado-62-m-quadrados-do-lado-da-sombra-em-parnamirim-825507765>
+{'preco': '96.500'}
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-por-carro-casa-em-caico-932011054> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/kitinete-de-canto-e-ventilada-932035312> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-82-m-por-r-90-000-00-santa-tereza-parnamirim-rn-932001306> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-ou-troco-por-carro-casa-em-caico-932011054>
+{'preco': '35.000'}
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/kitinete-de-canto-e-ventilada-932035312>
+{'preco': '99.000'}
+2021-10-01 20:39:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-com-2-dormitorios-a-venda-82-m-por-r-90-000-00-santa-tereza-parnamirim-rn-932001306>
+{'preco': '90.000'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/alugo-apto-com-3-quartos-em-candelaria-932042223> (referer: https://rn.olx.com.br/imoveis/venda?o=16&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/alugo-apto-com-3-quartos-em-candelaria-932042223>
+{'preco': '1.300'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-no-guaira-931779300> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/apv-1004-repasse-apartamento-terreo-2-4-mirantes-da-lagoa-s-g-a-rn-872950022> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/imoveis/venda?o=18&pe=100000&ps=0> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apartamento-a-venda-no-guaira-931779300>
+{'preco': '100.000'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-ou-troco-em-carro-931332172> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/apv-1004-repasse-apartamento-terreo-2-4-mirantes-da-lagoa-s-g-a-rn-872950022>
+{'preco': '40.000'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-atlantico-34-andar-ponta-negra-719903957> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [LOGGER] INFO: START PARSER
+2021-10-01 20:39:56 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2021-10-01 20:39:56 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-ou-troca-uma-casa-na-colonia-de-pium-931380824> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-ou-troco-em-carro-931332172>
+{'preco': '70.000'}
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/estrela-do-atlantico-34-andar-ponta-negra-719903957>
+{'preco': '0'}
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vende-se-ou-troca-uma-casa-na-colonia-de-pium-931380824>
+{'preco': '25.000'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-com-terreno-parnamirim-rn-931384990> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/vendo-casa-com-terreno-parnamirim-rn-931384990>
+{'preco': '25.000'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/natal-padrao-ponta-negra-931388142> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://rn.olx.com.br/rio-grande-do-norte/imoveis/natal-padrao-ponta-negra-931388142>
+{'preco': '100.000'}
+2021-10-01 20:39:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://rn.olx.com.br/rio-grande-do-norte/imoveis/casa-em-nova-cruz-rn-931388925> (referer: https://rn.olx.com.br/imoveis/venda?o=17&pe=100000&ps=0)
+2021-10-01 20:39:56 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
