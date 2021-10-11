@@ -3,21 +3,24 @@
 
 * Installation and configuration
 ** Create a virtual environment (.venv)
-- If you haven't installed python in you machine: https://www.python.org/downloads/
-- Run the following command in your shell:
+- If you haven't installed python in you machine, install it: https://www.python.org/downloads/
+- After installing, run the following command in your shell:
 #+begin_src shell
 python -m venv .venv
 #+end_src
 
-- NOTE: If this doesn't work, you may try to write python3 instead of python.
+- NOTE: If this doesn't work, you may try to run:
+#+begin_src shell
+python3 -m venv .venv
+#+end_src
 
 ** Source the virtual environment
-- For the beloved Linux:
+- For Linux:
 #+begin_src shell
 source .venv/bin/activate
 #+end_src
 
-- For the hated Windows (you use Windows? What a shame!):
+- For Windows:
 #+begin_src shell
 .venv\Scripts\activate.bat
 #+end_src
@@ -34,12 +37,4 @@ python -m pip install -r requirements.txt
 - Go to the folder olx and run:
 #+begin_src shell
 scrapy crawl olx -o olx-data.csv
-#+end_src
-
-- Let the process run into the end. Takes about 3-4 minutes. In the end, you will have a csv file like that:
-#+begin_src csv
-name,price,link
-Casa exclusiva e luxuosa em Jacumã por Carpediem - US01F,Sold Out,https://rn.olx.com.br/rio-grande-do-norte/temporada/casa-exclusiva-e-luxuosa-em-jacuma-por-carpediem-us01f-918665546
-Grande Espaço Interno - 3 Quartos - 4º Andar - Sombra -  Próximo Promater - Antônio Dutra ,380.000,https://rn.olx.com.br/rio-grande-do-norte/temporada/casa-exclusiva-e-luxuosa-em-jacuma-por-carpediem-us01f-918665546
-...
 #+end_src
