@@ -8,13 +8,13 @@ logger = logging.getLogger('LOGGER')
 class Olx(scrapy.Spider):
     # Attributes
     def __init__(self):
-            self.ps = 90000
-            self.pe = 100000
+        self.ps = 90000
+        self.pe = 100000
 
     # Increases the price interval
     def next_link(self, pe):
-            self.ps = pe
-            self.pe = pe + 50000
+        self.ps = pe
+        self.pe = pe + 50000
 
     name = 'olx'
     start_urls = ['https://rn.olx.com.br/imoveis/venda?pe=100000&ps=90000']
@@ -59,14 +59,17 @@ class Olx(scrapy.Spider):
         def extract_with_css(query, errMsg):
             return response.css(query).get(default=errMsg).strip()
 
-        area = 'AREAERR'
-        areaUtil = 'AREAUTILERR'
-        areaConst = 'AREACONSTERR'
-        municipio = 'MUNICIPIOERR'
-        categoria = 'CATEGORIAERR'
+        area = 'AREA-ERR'
+        areaUtil = 'AREAUTIL-ERR'
+        areaTitle = 'AREATITLE-ERR'
+        areaDesc = 'AREADESC-ERR'
+        areaUtil = 'AREAUTIL-ERR'
+        areaConst = 'AREACONST-ERR'
+        municipio = 'MUNICIPIO-ERR'
+        categoria = 'CATEGORIA-ERR'
+
         houseDetails = response.css('div.duvuxf-0.h3us20-0.jyICCp')
 
-        # TODO: procurar área nos títulos ou na descrição
 
         for detail in houseDetails:
             if detail.css('dt::text').get() == 'Área útil':
@@ -78,17 +81,28 @@ class Olx(scrapy.Spider):
             elif detail.css('dt::text').get() == 'Categoria':
                 categoria = detail.css('a::text').get()[:-1]
 
-            if areaUtil != 'AREAUTILERR':
-                area = areaConst
-            elif areaConst != 'AREACONSTERR':
-                area = areaUtil
+        title = response.css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text').get()
+        area = re.search(pattern = "[0-9][0-9]m²", string = title)
+        if area != None:
+            areaTitle = area.group().replace('m²', '')
+
+        # Gives preference to areaUtil over areaConst
+        if areaUtil != 'AREAUTIL-ERR':
+            area = areaUtil
+        elif areaConst != 'AREACONST-ERR':
+            area = areaConst
+        elif areaTitle != 'AREATITLE-ERR':
+            area = areaTitle
 
         yield{
-            #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULOERR'),
-            'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECOERR').replace('R$ ', ''),
+            #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULO-ERR'),
+            #'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),
             'area' : area,
-            'municipio' : municipio,
-            'categoria' : categoria,
+            'areaUtil' : areaUtil,
+            'areaConst' : areaConst,
+            'areaTitle' : areaTitle,
+            #'municipio' : municipio,
+            #'categoria' : categoria,
             #'link' : self.link_extractor.extract_links(response).get(),
             'link' : response,
         }
