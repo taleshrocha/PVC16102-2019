@@ -82,9 +82,10 @@ class Olx(scrapy.Spider):
                 categoria = detail.css('a::text').get()[:-1]
 
         title = response.css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text').get()
-        area = re.search(pattern = "[0-9][0-9]m²", string = title)
-        if area != None:
-            areaTitle = area.group().replace('m²', '')
+        areaRaw = re.search(pattern = "\d+\.?\d+?\s?m²", string = title)
+        if areaRaw != None:
+            areaClear = re.search(pattern = "\d+", string = areaRaw.group())
+            areaTitle = areaClear.group()
 
         # Gives preference to areaUtil over areaConst
         if areaUtil != 'AREAUTIL-ERR':
