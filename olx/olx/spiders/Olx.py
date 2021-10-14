@@ -7,6 +7,7 @@ class Olx(scrapy.Spider):
         self.ps = 0
         self.pe = 25000
 
+    # Methods
     # Go to the next price interval
     def next_interval(self, pe):
         self.ps = pe
@@ -15,6 +16,7 @@ class Olx(scrapy.Spider):
     # In case the page shows more than 4800 results, this method will decrease the price interval in order to show less houses in the page
     def decrease_interval(self, pe):
         self.pe -= 10000
+
 
     name = 'olx'
     allowed_domains = ['olx.com.br']
@@ -26,7 +28,7 @@ class Olx(scrapy.Spider):
 
         # Gets how many houses are in the page. The maximun is 5000.
         string = response.css('span.sc-1mi5vq6-0.eDXljX.sc-ifAKCX.fhJlIo::text').get()
-        aux = re.search(pattern = '\d+\.?\d+?\sresultados', string = string)
+        aux = re.search(pattern = '\d+\.?(\d+)?\sresultados', string = string)
         houseQuantity = re.search(pattern = '\d+\.?\d+', string = aux.group().replace('.',''))
         self.logger.info('====================HOUSES: %.0f====================', float(houseQuantity.group()))
 
@@ -60,6 +62,18 @@ class Olx(scrapy.Spider):
         def extract_with_css(query, errMsg):
             return response.css(query).get(default=errMsg).strip()
 
+        def extract_number(text, errMsg):
+            aux = re.search('\d+(\.|,)?(\d+)?(\s+)?m(²|2)', text)
+            if aux != None:
+                number = re.sub('m(²|2)', '', aux.group()) # Removes the m² or m2
+                if '.' in number: # A number like 2.000 will be 2000
+                    number = number.replace('.', '')
+                elif ',' in number:
+                    number = re.sub(',\d+', '', number) # A number like 2,000 will be 2
+                return number
+            else:
+                return errMsg
+
         # Give defaut error values to all the variebles i'am going to scrape
         area = 'AREA-ERR'
         areaUtil = 'AREAUTIL-ERR'
@@ -88,10 +102,7 @@ class Olx(scrapy.Spider):
 
         # Gets the area by the house title. If it has
         title = response.css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text').get()
-        aux = re.search(pattern = '\d+(\.|,)?(\d+)?(\s+)?m(²|2)', string = title) # Gets strings like '60m²' or '60 m²' or '60.01m2' and more
-        if aux != None:
-            areaClear = re.search(pattern = "\d+", string = aux.group()) # Gets only the numerator value
-            areaTitle = areaClear.group()
+        areaTitle = extract_number(title, 'AREATITLE-ERR')
 
         # Gives preference to areaUtil over areaConst and areaTitle variebles
         if areaUtil != 'AREAUTIL-ERR':
@@ -102,22 +113,18 @@ class Olx(scrapy.Spider):
             area = areaTitle
 
         description = response.css('span.sc-1sj3nln-1.eOSweo.sc-ifAKCX.cmFKIN::text').get()
-        aux = re.search(pattern = '\d+(\.|,)?(\d+)?(\s+)?m(²|2)', string = description) # Gets strings like '60m²' or '60 m²' or '60.01m2' and more
-        if aux != None:
-            areaClear = re.search(pattern = "\d+", string = aux.group()) # Gets only the numerator value TODO This will make a 2.000m2 how have 2m2!
-            # TODO If the float point is ',' change to '.'
-            areaDesc = areaClear.group()
+        areaDesc = extract_number(description, 'AREADESC-ERR')
 
         yield{
             #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULO-ERR'),
             #'description' : description,
-            'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),
-            'area' : area,
-            'cep' : cep,
+            #'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),
+            #'area' : area,
+            #'cep' : cep,
             #'areaUtil' : areaUtil,
             #'areaConst' : areaConst,
-            #'areaTitle' : areaTitle,
-            #'areaDesc' : areaDesc,
+            'areaTitle' : areaTitle,
+            'areaDesc' : areaDesc,
             #'municipio' : municipio,
             #'categoria' : categoria,
             #'link' : self.link_extractor.extract_links(response).get(),
