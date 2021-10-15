@@ -60,7 +60,7 @@ class Olx(scrapy.Spider):
     def parse_house(self, response):
 
         def extract_with_css(query, errMsg):
-            return response.css(query).get(default=errMsg).strip()
+            return response.css(query).get(errMsg).strip()
 
         def extract_number(text, errMsg):
             aux = re.search('\d+(\.|,)?(\d+)?(\s+)?m(²|2)', text)
@@ -116,17 +116,17 @@ class Olx(scrapy.Spider):
         areaDesc = extract_number(description, 'AREADESC-ERR')
 
         yield{
+            'cep' : cep,
+            'categoria' : categoria,
             #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULO-ERR'),
             #'description' : description,
-            #'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),
-            #'area' : area,
-            #'cep' : cep,
+            'area' : area,
+            'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),
             #'areaUtil' : areaUtil,
             #'areaConst' : areaConst,
-            'areaTitle' : areaTitle,
-            'areaDesc' : areaDesc,
+            #'areaTitle' : areaTitle,
+            #'areaDesc' : areaDesc,
             #'municipio' : municipio,
-            #'categoria' : categoria,
             #'link' : self.link_extractor.extract_links(response).get(),
-            'link' : response,
+            #'link' : response,
         }
