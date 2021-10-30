@@ -21,17 +21,32 @@ class Olx(scrapy.Spider):
     # Extracts all the needed information of a house page.
     def parse_house(self, response):
 
-        def extract_area_value(text, errMsg):
-            aux = re.search('\d+(\.|,)?(\d+)?(\s+)?m(²|2)', text)
-            if aux != None:
-                number = re.sub('m(²|2)', '', aux.group()) # Removes the m² or m2
+        def extract_number(text):
+            aux1 = re.search('\d+(\.|,)?(\d+)?(\s+)?m(²|2)', text)
+            aux2 = re.search('R$ ', text)
+            if aux1 != None:
+                number = re.sub('m(²|2)', '', aux1.group()) # Removes the m² or m2
                 if '.' in number: # A number like 2.000 will be 2000
                     number = number.replace('.', '')
                 elif ',' in number:
                     number = re.sub(',\d+', '', number) # A number like 2,000 will be 2
                 return number
+            elif aux2 != None:
+                price = text.replace('R$ ', '')
+                return price
             else:
-                return errMsg
+                return text
+
+        def extract_category(category):
+            aux = re.search('Aluguel', category)
+            if aux == None:
+                return category[0], 'V'
+            else:
+                return category[0], 'A'
+
+        TITLE = response.css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text').get()
+        DESCRIPTION = response.css('span.sc-1sj3nln-1.eOSweo.sc-ifAKCX.cmFKIN::text').get()
+        HOUSE_TAGS = response.css('div.duvuxf-0.h3us20-0.jyICCp')
 
         tags = {'Área útil' : 'AREAUTIL-ERR',
                 'Área construída' : 'AREACONST-ERR',
@@ -43,30 +58,30 @@ class Olx(scrapy.Spider):
                 'CEP' : 'CEP-ERR',
                 'Categoria' : 'CATEGORIA-ERR'}
 
-        houseDetails = response.css('div.duvuxf-0.h3us20-0.jyICCp')
-
         # Get all tags in the house tags
-        for houseDetail in houseDetails:
+        for tag in HOUSE_TAGS:
             for key, value in tags.items():
-                if houseDetail.css('dt::text').get() == key:
-                     tags[key] = houseDetail.css('dd::text').get()
-                     self.logger.info('====================%s: %s====================', houseDetail.css('dt::text').get(), tags[key])
+                if tag.css('dt::text').get() == key:
+                    if tag.css('dd::text').get() == None:
+                        dic = extract_category(tag.css('a::text').get())
+                        tags[key] = dic[0]
+                    else:
+                        tags[key] = extract_number(tag.css('dd::text').get())
+                    self.logger.info('====================%s: %s====================', tag.css('dt::text').get(), tags[key])
 
+        tags['Tipo'] = dic[1]
+        tags['Área título'] = extract_number(TITLE) #TODO make err msg tags['Área descrição'] = extract_number(DESCRIPTION)
 
-        ## Gets the area by the house title. If it has
-        #title = response.css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text').get()
-        #areaTitle = extract_area_value(title, 'AREATITLE-ERR')
-#
-        ## Gives preference to areaUtil over areaConst and areaTitle variebles
-        #if areaUtil != 'AREAUTIL-ERR':
-            #area = areaUtil
-        #elif areaConst != 'AREACONST-ERR':
-            #area = areaConst
-        #elif areaTitle != 'AREATITLE-ERR':
-            #area = areaTitle
+        # Gives preference to areaUtil over areaConst and areaTitle variebles
+        if tags['Área útil'] != 'AREAUTIL-ERR':
+            area = tags['Área útil'];
+        elif tags['Área construída'] != 'AREACONST-ERR':
+            area = tags['Área construída'];
+        elif tags['Área título'] != 'AREATITLE-ERR':
+            area = tags['Área título'];
+        elif tags['Área descrição'] != 'AREADESC-ERR':
+            area = tags['Área descrição'];
 
-        description = response.css('span.sc-1sj3nln-1.eOSweo.sc-ifAKCX.cmFKIN::text').get()
-        areaDesc = extract_area_value(description, 'AREADESC-ERR')
 
         # Gets the date that the house was published
         date = response.css('span.sc-1oq8jzc-0.jvuXUB.sc-ifAKCX.fizSrB::text').getall()
@@ -74,17 +89,17 @@ class Olx(scrapy.Spider):
         hour = re.search('\d{1,2}:\d{1,2}', date[1])
 
         yield{
-            'condo' : tags['Condomínio'],
-            'iptu' : tags['IPTU'],
+            'categoria' : tags['Categoria'],
+            #'condo' : tags['Condomínio'],
+            #'iptu' : tags['IPTU'],
             'quartos' : tags['Quartos'],
             'banheiros' : tags['Banheiros'],
             #'day' : day.group(),
             #'hour' : hour.group(),
             #'cep' : cep,
-            #'categoria' : categoria,
             #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULO-ERR'), #TODO, dont use estract_with
             #'description' : description,
-            #'area' : area,
+            'area' : area,
             #'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),#TODO, dont use estract_with
             #'areaUtil' : areaUtil,
             #'areaConst' : areaConst,
