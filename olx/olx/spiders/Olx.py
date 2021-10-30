@@ -12,10 +12,12 @@ class Olx(scrapy.Spider):
     def parse(self, response):
 
         # Gets the links for each house in the page
-        houseLinks = response.css('li.sc-1fcmfeb-2.juiJqh a')
+        #houseLinks = response.css('li.sc-1fcmfeb-2.juiJqh a')
+        houseLinks = response.css('li.sc-1fcmfeb-2.iezWpY a')
         yield from response.follow_all(houseLinks, self.parse_house)
 
         nextPageLinks = response.css('div.sc-hmzhuo.ccWJBO.sc-jTzLTM.iwtnNi a')
+        #nextPageLinks = response.css('div.sc-hmzhuo.kJjuHR.sc-jTzLTM.iwtnNi a')
         yield from response.follow_all(nextPageLinks, self.parse)
 
     # Extracts all the needed information of a house page.
@@ -81,7 +83,6 @@ class Olx(scrapy.Spider):
             area = tags['Área título'];
         elif tags['Área descrição'] != 'AREADESC-ERR':
             area = tags['Área descrição'];
-
 
         # Gets the date that the house was published
         date = response.css('span.sc-1oq8jzc-0.jvuXUB.sc-ifAKCX.fizSrB::text').getall()
