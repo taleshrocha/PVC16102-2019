@@ -12,12 +12,10 @@ class Olx(scrapy.Spider):
     def parse(self, response):
 
         # Gets the links for each house in the page
-        #houseLinks = response.css('li.sc-1fcmfeb-2.juiJqh a')
-        houseLinks = response.css('li.sc-1fcmfeb-2.iezWpY a')
+        houseLinks = response.css('li.sc-1fcmfeb-2.fvbmlV a')
         yield from response.follow_all(houseLinks, self.parse_house)
 
-        nextPageLinks = response.css('div.sc-hmzhuo.ccWJBO.sc-jTzLTM.iwtnNi a')
-        #nextPageLinks = response.css('div.sc-hmzhuo.kJjuHR.sc-jTzLTM.iwtnNi a')
+        nextPageLinks = response.css('div.sc-hmzhuo.kJjuHR.sc-jTzLTM.iwtnNi a')
         yield from response.follow_all(nextPageLinks, self.parse)
 
     # Extracts all the needed information of a house page.
@@ -89,7 +87,10 @@ class Olx(scrapy.Spider):
         day = re.search('\d{1,2}/\d{1,2}', date[1])
         hour = re.search('\d{1,2}:\d{1,2}', date[1])
 
+        images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract()
+
         yield{
+            'img-urls' : images,
             'categoria' : tags['Categoria'],
             #'condo' : tags['Condomínio'],
             #'iptu' : tags['IPTU'],

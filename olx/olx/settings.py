@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'olx.spiders'
 USER_AGENT = get_random_agent()
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -66,9 +66,15 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'olx.pipelines.OlxPipeline': 100,
+    'olx.pipelines.OlxPipeline': 1,
+    'scrapy.pipelines.images.ImagesPipeline': 2
     #'olx.pipelines.DuplicatedHouse': 200,
 }
+
+IMAGES_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/images'
+
+IMAGES_URLS_FIELD = '_img-urls'
+IMAGES_RESULT_FIELD = 'img-result'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
