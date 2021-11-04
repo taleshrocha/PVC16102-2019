@@ -87,10 +87,10 @@ class Olx(scrapy.Spider):
         day = re.search('\d{1,2}/\d{1,2}', date[1])
         hour = re.search('\d{1,2}:\d{1,2}', date[1])
 
-        images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract()
+        images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract() # Gets a array with the images urls for downloading
 
         yield{
-            'img-urls' : images,
+            'images' : images,
             'categoria' : tags['Categoria'],
             #'condo' : tags['Condomínio'],
             #'iptu' : tags['IPTU'],

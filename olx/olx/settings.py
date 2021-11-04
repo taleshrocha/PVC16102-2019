@@ -66,15 +66,15 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'olx.pipelines.OlxPipeline': 1,
-    'scrapy.pipelines.images.ImagesPipeline': 2
+    'olx.pipelines.OlxPipeline': 0,
+    'olx.pipelines.MyImagesPipeline' : 2
     #'olx.pipelines.DuplicatedHouse': 200,
 }
 
 IMAGES_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/images'
 
-IMAGES_URLS_FIELD = '_img-urls'
-IMAGES_RESULT_FIELD = 'img-result'
+IMAGES_URLS_FIELD = 'images'
+#IMAGES_RESULT_FIELD = 'img-result'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
