@@ -92,22 +92,22 @@ class Olx(scrapy.Spider):
         yield{
             'images' : images,
             'categoria' : tags['Categoria'],
-            #'condo' : tags['Condomínio'],
-            #'iptu' : tags['IPTU'],
+            'condo' : tags['Condomínio'],
+            'iptu' : tags['IPTU'],
             'quartos' : tags['Quartos'],
             'banheiros' : tags['Banheiros'],
-            #'day' : day.group(),
-            #'hour' : hour.group(),
-            #'cep' : cep,
+            'day' : day.group(),
+            'hour' : hour.group(),
+            'cep' : tags['CEP'],
             #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULO-ERR'), #TODO, dont use estract_with
             #'description' : description,
             'area' : area,
-            #'preco' : extract_with_css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text', 'PRECO-ERR').replace('R$ ', ''),#TODO, dont use estract_with
+            'preco' : response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get().replace('R$ ', ''), #TODO default error msg
             #'areaUtil' : areaUtil,
             #'areaConst' : areaConst,
             #'areaTitle' : areaTitle,
             #'areaDesc' : areaDesc,
-            #'municipio' : municipio,
+            'municipio' : tags['Município'],
             #'link' : self.link_extractor.extract_links(response).get(),
             'link' : response.request.url,
         }

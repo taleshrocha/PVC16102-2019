@@ -21,7 +21,7 @@ class OlxPipeline:
         if adapter.get('area') == 'AREA-ERR':
                 raise DropItem(f'THE AREA IS MISSING IN {item}')
         else:
-            newItem = {"id" : self.id}
+            newItem = {"id" : self.id} # Creates a id for each house
             newItem.update(item)
             item = newItem
             self.id+=1
@@ -29,8 +29,7 @@ class OlxPipeline:
 
 class MyImagesPipeline(ImagesPipeline):
     def file_path(self, request, response=None, info=None, *, item=None):
-        return item.get('id') + '/' + os.path.basename(urlparse(request.url).path)
-        #return 'blah/' + os.path.basename(urlparse(request.url).path)
+        return str(item.get('id')) + '/' + os.path.basename(urlparse(request.url).path)
 
 
 #class DuplicatedHouse:

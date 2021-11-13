@@ -67,9 +67,12 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'olx.pipelines.OlxPipeline': 0,
-    'olx.pipelines.MyImagesPipeline' : 2
+    'olx.pipelines.MyImagesPipeline' : 1
+    #'scrapy.pipelines.images.ImagesPipeline': 1 // For default image pipeline
     #'olx.pipelines.DuplicatedHouse': 200,
 }
+
+#MYIMAGESPIPELINE_FILES_EXPIRES = 0
 
 IMAGES_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/images'
 
@@ -78,15 +81,15 @@ IMAGES_URLS_FIELD = 'images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = False
 # The initial download delay
-#AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY = 60
-# The average number of requests Scrapy should be sending in parallel to
+AUTOTHROTTLE_MAX_DELAY = 60
+#The average number of requests Scrapy should be sending in parallel to
 # each remote server
-#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
-# Enable showing throttling stats for every response received:
+AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+#Enable showing throttling stats for every response received:
 #AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
