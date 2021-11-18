@@ -70,28 +70,33 @@ class Olx(scrapy.Spider):
                     self.logger.info('====================%s: %s====================', tag.css('dt::text').get(), tags[key])
 
         tags['Tipo'] = dic[1]
-        tags['Área título'] = extract_number(TITLE) #TODO make err msg tags['Área descrição'] = extract_number(DESCRIPTION)
+        tags['Área título'] = extract_number(TITLE)
+        tags['Área descrição'] = extract_number(DESCRIPTION)
 
         # Gives preference to areaUtil over areaConst and areaTitle variebles
         if tags['Área útil'] != 'AREAUTIL-ERR':
             area = tags['Área útil'];
         elif tags['Área construída'] != 'AREACONST-ERR':
             area = tags['Área construída'];
-        elif tags['Área título'] != 'AREATITLE-ERR':
+        elif tags['Área título'] != TITLE:
             area = tags['Área título'];
-        elif tags['Área descrição'] != 'AREADESC-ERR':
+        elif tags['Área descrição'] != DESCRIPTION:
             area = tags['Área descrição'];
+        else:
+            area = 'AREA-ERR';
 
         # Gets the date that the house was published
         date = response.css('span.sc-1oq8jzc-0.jvuXUB.sc-ifAKCX.fizSrB::text').getall()
         day = re.search('\d{1,2}/\d{1,2}', date[1])
         hour = re.search('\d{1,2}:\d{1,2}', date[1])
 
+        # Gets the url to all images in that page. Downloads in the images pipeline
         images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract() # Gets a array with the images urls for downloading
 
         yield{
-            'images' : images,
+            #'images' : images,
             'categoria' : tags['Categoria'],
+            'tipo' : tags['Tipo'],
             'condo' : tags['Condomínio'],
             'iptu' : tags['IPTU'],
             'quartos' : tags['Quartos'],
@@ -99,15 +104,15 @@ class Olx(scrapy.Spider):
             'day' : day.group(),
             'hour' : hour.group(),
             'cep' : tags['CEP'],
-            #'titulo' : extract_with_css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text', 'TITULO-ERR'), #TODO, dont use estract_with
-            #'description' : description,
-            'area' : area,
-            'preco' : response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get().replace('R$ ', ''), #TODO default error msg
-            #'areaUtil' : areaUtil,
-            #'areaConst' : areaConst,
-            #'areaTitle' : areaTitle,
-            #'areaDesc' : areaDesc,
             'municipio' : tags['Município'],
-            #'link' : self.link_extractor.extract_links(response).get(),
+            'area' : area,
+            'preco' : response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get(default='PRECO-ERR').replace('R$ ', ''),
+            'area' : area,
+            #'area' : tags['Área útil'],         # For debug
+            #'area' : tags['Área construida'],   # For debug
+            #'area' : tags['Área título'],       # For debug
+            #'area' : tags['Área descrição'],    # For debug
+            #'titulo' : TITLE,
+            #'description' : DESCRIPTION,
             'link' : response.request.url,
         }
