@@ -22,8 +22,11 @@ class Olx(scrapy.Spider):
     def parse_house(self, response):
 
         def extract_number(text):
+            self.logger.info('1====================%s====================', text)
             aux1 = re.search('\d+(\.|,)?(\d+)?(\s+)?m(²|2)', text)
-            aux2 = re.search('R$ ', text)
+            self.logger.info('2====================%s====================', aux1)
+            aux2 = re.search('R\$\s', text)
+            self.logger.info('3====================%s====================', aux2)
             if aux1 != None:
                 number = re.sub('m(²|2)', '', aux1.group()) # Removes the m² or m2
                 if '.' in number: # A number like 2.000 will be 2000
