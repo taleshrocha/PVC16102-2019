@@ -22,11 +22,8 @@ class Olx(scrapy.Spider):
     def parse_house(self, response):
 
         def extract_number(text):
-            self.logger.info('1====================%s====================', text)
             aux1 = re.search('\d+(\.|,)?(\d+)?(\s+)?m(²|2)', text)
-            self.logger.info('2====================%s====================', aux1)
             aux2 = re.search('R\$\s', text)
-            self.logger.info('3====================%s====================', aux2)
             if aux1 != None:
                 number = re.sub('m(²|2)', '', aux1.group()) # Removes the m² or m2
                 if '.' in number: # A number like 2.000 will be 2000
@@ -59,7 +56,8 @@ class Olx(scrapy.Spider):
                 'Banheiros' : 'BANHEIROS-ERR',
                 'Município' : 'MUNICIPIO-ERR',
                 'CEP' : 'CEP-ERR',
-                'Categoria' : 'CATEGORIA-ERR'}
+                'Categoria' : 'CATEGORIA-ERR',
+                'Vagas na garagem' : 'VAGAS-ERR'}
 
         # Get all tags in the house tags
         for tag in HOUSE_TAGS:
@@ -98,6 +96,7 @@ class Olx(scrapy.Spider):
 
         yield{
             #'images' : images,
+            'vagas' : tags['Vagas na garagem'],
             'categoria' : tags['Categoria'],
             'tipo' : tags['Tipo'],
             'condo' : tags['Condomínio'],
@@ -107,15 +106,15 @@ class Olx(scrapy.Spider):
             'day' : day.group(),
             'hour' : hour.group(),
             'cep' : tags['CEP'],
-            'municipio' : tags['Município'],
+            'municipio' : (tags['Município'])[0],
             'area' : area,
-            'preco' : response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get(default='PRECO-ERR').replace('R$ ', ''),
+            'preco' : extract_number(response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get(default='PRECO-ERR').replace('R$ ', '') + 'm2'),
             'area' : area,
-            #'area' : tags['Área útil'],         # For debug
-            #'area' : tags['Área construida'],   # For debug
-            #'area' : tags['Área título'],       # For debug
-            #'area' : tags['Área descrição'],    # For debug
-            #'titulo' : TITLE,
-            #'description' : DESCRIPTION,
+            #'area' : tags['Área útil'],        # For debug
+            #'area' : tags['Área construida'],  # For debug
+            #'area' : tags['Área título'],      # For debug
+            #'area' : tags['Área descrição'],   # For debug
+            'titulo' : TITLE,
+            'description' : DESCRIPTION,
             'link' : response.request.url,
         }

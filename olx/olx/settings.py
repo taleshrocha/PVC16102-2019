@@ -15,6 +15,21 @@ BOT_NAME = 'olx'
 SPIDER_MODULES = ['olx.spiders']
 NEWSPIDER_MODULE = 'olx.spiders'
 
+FEED_EXPORT_FIELDS = ['id',
+                      'categoria',
+                      'tipo',
+                      'municipio',
+                      'cep',
+                      'day',
+                      'hour',
+                      'preco',
+                      'area',
+                      'iptu',
+                      'condo',
+                      'quartos',
+                      'banheiros',
+                      'vagas',
+                      'link']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = get_random_agent()

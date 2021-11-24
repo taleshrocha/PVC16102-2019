@@ -1,3 +1,5 @@
 *.csv
 *.dat
 images/
+log
+details/

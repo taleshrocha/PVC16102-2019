@@ -10,6 +10,8 @@ import os
 from urllib.parse import urlparse
 from scrapy.pipelines.images import ImagesPipeline
 
+DETAILS_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/details'
+
 class OlxPipeline:
     # Attributes
     def __init__(self):
@@ -25,39 +27,10 @@ class OlxPipeline:
             newItem.update(item)
             item = newItem
             self.id+=1
+            with open(os.path.join(DETAILS_STORE, str(item.get('id'))), "w") as f:
+                f.write('TÍTULO\n' + item.get('titulo') + '\n' + 'DESCRIÇÃO\n' + item.get('description'))
             return item
 
 class MyImagesPipeline(ImagesPipeline):
     def file_path(self, request, response=None, info=None, *, item=None):
         return str(item.get('id')) + '/' + os.path.basename(urlparse(request.url).path)
-
-
-#class DuplicatedHouse:
-#    # If the house have the same CEP, area and price as another, discart
-#    def __init__(self):
-#        # Attributes
-#        self.houses = set()
-#
-#
-#    def process_item(self, item, spider):
-#        # Drop the item if it already was parsed (if it's house was in the houses set)
-#        def create_house(item):
-#            # Gets the information that makes the house unique
-#            adapter = ItemAdapter(item)
-#            house = {
-#            'cep': '',
-#            'area': '',
-#            'price': ''
-#            }
-#
-#            house['cep'] = adapter.get('cep')
-#            house['area'] = adapter.get('area')
-#            house['price'] = adapter.get('price')
-#            return house
-#
-#        house = create_house(item)
-#        #if house in self.houses: TODO fix that
-#        #    raise DropItem(f'THIS HOUSE IS DUPLICATED {item}')
-#        #else:
-#        #self.houses.add(house)
-#        return item
