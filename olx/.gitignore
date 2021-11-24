@@ -2,4 +2,4 @@
 *.dat
 images/
 log
-details/
+details/*
