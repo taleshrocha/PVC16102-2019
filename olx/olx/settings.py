@@ -15,12 +15,27 @@ BOT_NAME = 'olx'
 SPIDER_MODULES = ['olx.spiders']
 NEWSPIDER_MODULE = 'olx.spiders'
 
+FEED_EXPORT_FIELDS = ['id',
+                      'categoria',
+                      'tipo',
+                      'municipio',
+                      'cep',
+                      'day',
+                      'hour',
+                      'preco',
+                      'area',
+                      'iptu',
+                      'condo',
+                      'quartos',
+                      'banheiros',
+                      'vagas',
+                      'link']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = get_random_agent()
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -65,21 +80,31 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'olx.pipelines.OlxPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'olx.pipelines.OlxPipeline': 0,
+    'olx.pipelines.MyImagesPipeline' : 1
+    #'scrapy.pipelines.images.ImagesPipeline': 1 // For default image pipeline
+    #'olx.pipelines.DuplicatedHouse': 200,
+}
+
+#MYIMAGESPIPELINE_FILES_EXPIRES = 0
+
+IMAGES_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/images'
+
+IMAGES_URLS_FIELD = 'images'
+#IMAGES_RESULT_FIELD = 'img-result'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-#AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY = 60
-# The average number of requests Scrapy should be sending in parallel to
+AUTOTHROTTLE_MAX_DELAY = 60
+#The average number of requests Scrapy should be sending in parallel to
 # each remote server
-#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
-# Enable showing throttling stats for every response received:
+AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+#Enable showing throttling stats for every response received:
 #AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
