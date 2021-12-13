@@ -48,7 +48,7 @@ class Olx(scrapy.Spider):
         DESCRIPTION = response.css('span.sc-1sj3nln-1.eOSweo.sc-ifAKCX.cmFKIN::text').get()
         HOUSE_TAGS = response.css('div.duvuxf-0.h3us20-0.jyICCp')
 
-        tags = {'Área útil' : 'AREAUTIL-ERR',
+        tags = {'Área útil' : 'AREAUTIL-ERR', # TODO a área pode ser chamada de tamanho or ignore all terrains?
                 'Área construída' : 'AREACONST-ERR',
                 'Condomínio' : 'CONDO-ERR',
                 'Quartos' : 'QUARTOS-ERR',
@@ -95,7 +95,7 @@ class Olx(scrapy.Spider):
         images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract() # Gets a array with the images urls for downloading
 
         yield{
-            #'images' : images,
+            'images' : images,
             'vagas' : tags['Vagas na garagem'],
             'categoria' : tags['Categoria'],
             'tipo' : tags['Tipo'],

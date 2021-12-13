@@ -3,3 +3,5 @@
 images/
 log
 details/*
+details/
+*.zip
