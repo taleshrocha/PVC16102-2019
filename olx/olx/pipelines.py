@@ -19,9 +19,11 @@ class OlxPipeline:
 
     def process_item(self, item, spider):
         # Drop the area if has error or if is less than 25m2
-        adapter = ItemAdapter(item) # TODO remove if is a terrain?
-        if adapter.get('area') == 'AREA-ERR' or adapter.get('area') < '25':
+        adapter = ItemAdapter(item)
+        if adapter.get('area') == 'AREA-ERR' or adapter.get('area') < '25' or adapter.get('area') == '0':
                 raise DropItem(f'THE AREA IS MISSING OR IS LESS THAN 25 M2 IN {item}')
+        if adapter.get('categoria') == 'T':
+                raise DropItem(f'DROP TERRAIN {item}')
         else:
             newItem = {"id" : self.id} # Creates a id for each house
             newItem.update(item)
