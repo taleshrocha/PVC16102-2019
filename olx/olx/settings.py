@@ -32,6 +32,8 @@ FEED_EXPORT_FIELDS = ['id',
                       'quartos',
                       'banheiros',
                       'vagas',
+                      'condominio',
+                      'politica',
                       'link']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -99,7 +101,7 @@ IMAGES_URLS_FIELD = 'images'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = False
 # The initial download delay
 AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies

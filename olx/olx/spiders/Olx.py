@@ -3,13 +3,23 @@ import re
 
 class Olx(scrapy.Spider):
 
+    global errMsg
     name = 'olx'
     allowed_domains = ['olx.com.br']
     start_urls = ['https://rn.olx.com.br/imoveis?q=minha%20casa%20minha%20vida&sp=1',
-                  'https://rn.olx.com.br/imoveis?q=mcmv&sp=1']
+                  'https://rn.olx.com.br/imoveis?q=mcmv&sp=1',
+                  'https://rn.olx.com.br/imoveis?q=casa%20verde%20e%20amarela&sp=1',
+                  'https://rn.olx.com.br/imoveis?q=cva&sp=1']
+    errMsg = '--'
 
     # Initial parser for Scrapy. Is the "main" function.
     def parse(self, response):
+
+        global politica
+        if re.search('minha|mcmv', response.request.url) != None:
+            politica = 'mcmv'
+        else:
+            politica = 'cva'
 
         # Gets the links for each house in the page
         houseLinks = response.css('li.sc-1fcmfeb-2.fvbmlV a')
@@ -50,20 +60,20 @@ class Olx(scrapy.Spider):
                 return text
 
         TITLE = response.css('h1.sc-45jt43-0.eCghYu.sc-ifAKCX.cmFKIN::text').get()
-        DESCRIPTION = response.css('span.sc-1sj3nln-1.eOSweo.sc-ifAKCX.cmFKIN::text').get()
+        DESCRIPTION = response.css('span.sc-1sj3nln-1.eOSweo.sc-ifAKCX.cmFKIN').get()
         HOUSE_TAGS = response.css('div.duvuxf-0.h3us20-0.jyICCp')
 
-        tags = {'Área útil' : 'AREAUTIL-ERR',
-                'Área construída' : 'AREACONST-ERR',
-                'Condomínio' : 'CONDO-ERR',
-                'Quartos' : 'QUARTOS-ERR',
-                'IPTU' : 'IPTU-ERR',
-                'Banheiros' : 'BANHEIROS-ERR',
-                'Município' : 'MUNICIPIO-ERR',
-                'CEP' : 'CEP-ERR',
-                'Categoria' : 'CATEGORIA-ERR',
-                'Tipo' : 'TIPO-ERR',
-                'Vagas na garagem' : 'VAGAS-ERR'}
+        tags = {'Área útil' : errMsg,
+                'Área construída' : errMsg,
+                'Condomínio' : errMsg,
+                'Quartos' : errMsg,
+                'IPTU' : errMsg,
+                'Banheiros' : errMsg,
+                'Município' : errMsg,
+                'CEP' : errMsg,
+                'Categoria' : errMsg,
+                'Tipo' : errMsg,
+                'Vagas na garagem' : errMsg}
 
         # Get all tags in the house tags
         first = True
@@ -81,16 +91,16 @@ class Olx(scrapy.Spider):
         tags['Área descrição'] = extract_area(DESCRIPTION)
 
         # Gives preference to areaUtil over areaConst and areaTitle variebles
-        if tags['Área útil'] != 'AREAUTIL-ERR':
+        if tags['Área útil'] != errMsg:
             area = tags['Área útil'];
-        elif tags['Área construída'] != 'AREACONST-ERR':
+        elif tags['Área construída'] != errMsg:
             area = tags['Área construída'];
         elif tags['Área título'] != TITLE:
             area = tags['Área título'];
         elif tags['Área descrição'] != DESCRIPTION:
             area = tags['Área descrição'];
         else:
-            area = 'AREA-ERR';
+            area = errMsg;
 
         # Gets the date that the house was published
         script = response.css('script').getall()
@@ -105,15 +115,28 @@ class Olx(scrapy.Spider):
         rawName = re.search('sellerName":".+","ad', script[7]).group()
         corretor = re.sub('((sellerName)|"|:|(,"ad))', '', rawName)
 
+        condominio = re.search('condom(i|í)nio\s*fechado', DESCRIPTION, re.I)
+        if condominio != None:
+            condominio = 'fechado'
+        else:
+            condominio = re.search('condom(i|í)nio\s*residencial', DESCRIPTION, re.I)
+            if condominio != None:
+                condominio = 'residencial'
+            else:
+                condominio = '--'
+
+
+
         # Gets the url to all images in that page. Downloads in the images pipeline
         images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract() # Gets a array with the images urls for downloading
 
         yield{
-            'images' : images,
+            #'images' : images,
             'vagas' : tags['Vagas na garagem'],
             'categoria' : tags['Categoria'],
             'tipo' : tags['Tipo'],
             'condo' : tags['Condomínio'],
+            'condominio' : condominio,
             'iptu' : tags['IPTU'],
             'quartos' : tags['Quartos'],
             'banheiros' : tags['Banheiros'],
@@ -125,13 +148,14 @@ class Olx(scrapy.Spider):
             'cep' : tags['CEP'],
             'municipio' : (tags['Município']),
             'area' : area,
-            'preco' : extract_number(response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get(default='PRECO-ERR').replace('R$ ', '') + 'm2'),
+            'preco' : extract_number(response.css('h2.sc-1wimjbb-0.JzEH.sc-ifAKCX.cmFKIN::text').get(default=errMsg).replace('R$ ', '') + 'm2'),
             'area' : area,
             #'area' : tags['Área útil'],        # For debug
             #'area' : tags['Área construida'],  # For debug
             #'area' : tags['Área título'],      # For debug
             #'area' : tags['Área descrição'],   # For debug
             'titulo' : TITLE,
+            'politica' : politica,
             'description' : DESCRIPTION,
             'link' : response.request.url,
         }
