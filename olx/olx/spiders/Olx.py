@@ -115,28 +115,25 @@ class Olx(scrapy.Spider):
         rawName = re.search('sellerName":".+","ad', script[7]).group()
         corretor = re.sub('((sellerName)|"|:|(,"ad))', '', rawName)
 
-        condominio = re.search('condom(i|í)nio\s*fechado', DESCRIPTION, re.I)
-        if condominio != None:
-            condominio = 'fechado'
+        # Gets the condominium name.
+        aux = re.search('condom(i|í)nio\s+fechado', DESCRIPTION, re.I)
+        aux2 = re.search('condom(i|í)nio\s+fechado', TITLE, re.I)
+
+        if aux == None and aux2 == None:
+            condominio = "nao"
         else:
-            condominio = re.search('condom(i|í)nio\s*residencial', DESCRIPTION, re.I)
-            if condominio != None:
-                condominio = 'residencial'
-            else:
-                condominio = '--'
+            condominio = 'sim'
 
-
-
-        # Gets the url to all images in that page. Downloads in the images pipeline
+        # Gets the url to all images in that page. Downloads then in the images pipeline.
         images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract() # Gets a array with the images urls for downloading
 
         yield{
             #'images' : images,
             'vagas' : tags['Vagas na garagem'],
             'categoria' : tags['Categoria'],
-            'tipo' : tags['Tipo'],
-            'condo' : tags['Condomínio'],
-            'condominio' : condominio,
+            #'tipo' : tags['Tipo'],
+            'condopreco' : tags['Condomínio'],
+            'condofechado' : condominio,
             'iptu' : tags['IPTU'],
             'quartos' : tags['Quartos'],
             'banheiros' : tags['Banheiros'],

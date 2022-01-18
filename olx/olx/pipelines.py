@@ -24,6 +24,8 @@ class OlxPipeline:
                 raise DropItem(f'THE AREA IS MISSING OR IS LESS THAN 25 M2 IN {item}')
         if adapter.get('categoria') == 'T':
                 raise DropItem(f'DROP TERRAIN {item}')
+        if adapter.get('tipo') == '--' or adapter.get('tipo') == 'A':
+                raise DropItem(f'DROP: NO TYPE OR RENT {item}')
         else:
             newItem = {"id" : self.id} # Creates a id for each house
             newItem.update(item)
