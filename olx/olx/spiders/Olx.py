@@ -128,7 +128,7 @@ class Olx(scrapy.Spider):
         images = response.css('div.lkx530-2.bgLcPW div img::attr(src)').extract() # Gets a array with the images urls for downloading
 
         yield{
-            #'images' : images,
+            'images' : images,
             'vagas' : tags['Vagas na garagem'],
             'categoria' : tags['Categoria'],
             #'tipo' : tags['Tipo'],
