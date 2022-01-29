@@ -2,6 +2,7 @@
 
 source("source.R")
 
+# TODO: This doesn't filter the year.
 olx %>%
   count(mes) %>%
   filter(!is.na(mes)) %>% 
@@ -10,6 +11,11 @@ olx %>%
   ggplot() +
   geom_col(aes(x = mes, y = n, fill = mes), show.legend = FALSE) +
   geom_label(aes(x = mes, y = n/2, label = n)) +
-  coord_flip()
+  coord_flip() +
+  labs(
+       x = "Mês",
+       y = "N° de anúncios",
+       title = "N° de anúncios por mês"
+  )
 
-ggsave("advertisement-month")
+ggsave("../images/advertisement-month.png")

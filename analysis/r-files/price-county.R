@@ -3,16 +3,21 @@
 source("source.R")
 
 # TODO: Put labels in the maximum, medium and minimum values.
+
 olx %>%
-  ggplot() +
-  geom_boxplot(aes(x = preco, y = municipio, color = municipio), show.legend = FALSE) +
-  scale_x_continuous(breaks = seq(0, 1000000, 100000)) +
-  #xlim(0, 500000) +
+  filter(municipio == "Natal" | municipio == "Parnamirim") %>%
+  filter(preco <= 500000) %>%
+  ggplot(aes(x=municipio, y=preco, fill=municipio)) +
+  geom_boxplot(show.legend = FALSE) +
+  stat_summary(geom="text", fun=quantile,
+               aes(label=sprintf("%1.1f", ..y..)),
+               position=position_nudge(y=0.33), size=3.5
+  ) +
   labs(
-       x = "Preço (R$)",
-       y = "Município",
+       x = "Município",
+       y = "Preço (R$)",
        title = "Gráfico Boxplot",
-       subtitle = "Município por preço"
+       subtitle = "Preço por município"
   )
 
-ggsave("../images/price-county.png", width=10)
+ggsave("../images/price-county.png")

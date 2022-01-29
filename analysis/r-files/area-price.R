@@ -13,9 +13,8 @@ olx %>%
   labs(
        x = "Área (m²)",
        y = "Preço (R$)",
-       #color = "",
        title = "Gráfico de dispersão",
        subtitle = "Área por preço"
   )
 
-ggsave("area-price")
+ggsave("../images/area-price.png")

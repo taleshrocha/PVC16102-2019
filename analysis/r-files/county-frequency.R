@@ -1,4 +1,4 @@
-# This script plots the column graphic of the county frequency.
+# This script plots the column graphic of the county frequency per advertisement.
 
 source("source.R")
 
@@ -10,6 +10,11 @@ olx %>%
   ggplot() +
   geom_col(aes(x = municipio, y = n, fill = municipio), show.legend = FALSE) +
   geom_label(aes(x = municipio, y = n/2, label = n)) +
-  coord_flip()
+  coord_flip() +
+  labs(
+       x = "Município",
+       y = "N° de anúncios",
+       title = "N° de anúncios por municípios"
+  )
 
-ggsave("county-frequency")
+ggsave("../images/county-frequency.png")

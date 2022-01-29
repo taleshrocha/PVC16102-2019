@@ -12,4 +12,4 @@ olx %>%
   geom_label(aes(x = categoria, y = n/2, label = n)) +
   coord_flip()
 
-ggsave("house-apartment-frequency")
+ggsave("../images/house-apartment-frequency.png")
