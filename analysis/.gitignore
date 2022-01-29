@@ -1,4 +1,5 @@
 *.pdf
+*.png
 .RData
 .Rhistory
-/images
+images/*
