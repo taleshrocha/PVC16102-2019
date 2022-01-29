@@ -1,0 +1,18 @@
+#+TITLE: Data Analysis
+#+DESCRIPTION: An analysis of the houses data scraped from olx.
+
+* Installation and configuration
+#+begin_src shell
+#+end_src
+
+** Install the requirements
+- That's easy! Just run:
+#+begin_src shell
+blah
+#+end_src
+
+* How to run the project
+- Go to the r-files and run:
+#+begin_src shell
+R -f area-price.R
+#+end_src
