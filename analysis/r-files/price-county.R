@@ -1,23 +1,25 @@
 # This script plots the box-plot of the price per county.
 
 source("source.R")
+library(Hmisc)
 
-# TODO: Put labels in the maximum, medium and minimum values.
+options(scipen = 9999)
 
 olx %>%
   filter(municipio == "Natal" | municipio == "Parnamirim") %>%
-  filter(preco <= 500000) %>%
-  ggplot(aes(x=municipio, y=preco, fill=municipio)) +
-  geom_boxplot(show.legend = FALSE) +
-  stat_summary(geom="text", fun=quantile,
-               aes(label=sprintf("%1.1f", ..y..)),
-               position=position_nudge(y=0.33), size=3.5
-  ) +
+  filter(strtoi(preco) <= 500000) %>%
+  ggplot(aes(x=municipio, y=strtoi(preco), color=municipio)) +
+  geom_violin(show.legend = FALSE, trim = FALSE) +
+  theme_light(base_size=14) +
+  theme(axis.title.x = element_blank(),axis.title.y = element_blank()) +
+  geom_boxplot(width = 0.1) +
+  scale_y_continuous(breaks = seq(0, 1000000, 50000)) +
   labs(
        x = "Município",
        y = "Preço (R$)",
-       title = "Gráfico Boxplot",
-       subtitle = "Preço por município"
+       title = "Figura 2",
+       subtitle = "Preço por município",
+       color = "Município",
   )
 
 ggsave("../images/price-county.png")
