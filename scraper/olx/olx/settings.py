@@ -93,7 +93,7 @@ ITEM_PIPELINES = {
 
 #MYIMAGESPIPELINE_FILES_EXPIRES = 0
 
-IMAGES_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/images'
+IMAGES_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/PVC16102-2019/scraper/olx/images'
 
 IMAGES_URLS_FIELD = 'images'
 #IMAGES_RESULT_FIELD = 'img-result'

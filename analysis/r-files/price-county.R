@@ -11,7 +11,6 @@ olx %>%
   ggplot(aes(x=municipio, y=strtoi(preco), color=municipio)) +
   geom_violin(show.legend = FALSE, trim = FALSE) +
   theme_light(base_size=14) +
-  theme(axis.title.x = element_blank(),axis.title.y = element_blank()) +
   geom_boxplot(width = 0.1) +
   scale_y_continuous(breaks = seq(0, 1000000, 50000)) +
   labs(

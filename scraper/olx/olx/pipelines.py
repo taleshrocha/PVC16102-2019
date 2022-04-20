@@ -10,7 +10,7 @@ import os
 from urllib.parse import urlparse
 from scrapy.pipelines.images import ImagesPipeline
 
-DETAILS_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/olx-scraper/olx/details'
+DETAILS_STORE = '/home/tales/Documents/bti/pesquisa/PVC16102-2019/PVC16102-2019/scraper/olx/details'
 
 class OlxPipeline:
     # Attributes

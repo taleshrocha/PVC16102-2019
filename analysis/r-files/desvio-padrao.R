@@ -18,13 +18,13 @@ p1 <- olx %>%
   theme_light(base_size=14) +
   #geom_label(data = mu, aes(x = grp.mean, y = 0.000010, label = round(grp.mean)), size = 3, vjust = 0, hjust = -0.2) +
   scale_color_viridis_d() +
-  theme(axis.title.x = element_blank(),axis.title.y = element_blank()) +
+  #theme(axis.title.x = element_blank(),axis.title.y = element_blank()) +
   rotate_x_text(45) +
   labs(
        x = "Preço (R$)",
        y = "Densidade",
        title = "Figura 3",
-       subtitle = "Preço por política habitacional",
+       subtitle = "Preço dos imóveis",
   )
 
 ggsave("../images/desvio-padrao.png")

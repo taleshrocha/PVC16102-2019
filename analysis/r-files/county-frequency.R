@@ -14,7 +14,6 @@ olx %>%
   coord_flip() +
   theme_light(base_size=14) +
   scale_color_viridis_d() +
-  theme(axis.title.x = element_blank(),axis.title.y = element_blank()) +
   labs(
        x = "Município",
        y = "N° de anúncios",
